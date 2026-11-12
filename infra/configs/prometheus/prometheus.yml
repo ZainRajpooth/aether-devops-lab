@@ -1,0 +1,11 @@
+# CLEAN rewrite (stale dead-container source discarded). Scrape self + node-exporter over aether DNS.
+# App scrapes (litellm/n8n/...) added as those units come up; missing targets show 'down' till then — benign.
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ['localhost:9090']
+  - job_name: node
+    static_configs:
+      - targets: ['node-exporter:9100']

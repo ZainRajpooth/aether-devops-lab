@@ -1,0 +1,7 @@
+docker.io/axllent/mailpit:latest
+docker.io/bitnamilegacy/minio:latest
+docker.io/library/postgres:19rc1-alpine
+docker.io/library/redis:alpine
+docker.io/prom/node-exporter:latest
+docker.io/prom/prometheus:latest
+docker.io/semitechnologies/weaviate:latest

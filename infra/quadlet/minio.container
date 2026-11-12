@@ -1,0 +1,21 @@
+# STATEFUL brick 2 (minio). Secrets via EnvironmentFile=secrets.env (single-source spine; rotation=1-file edit).
+# Image: docker.io/bitnamilegacy/minio:latest  (parity ref (captured tag)). No Exec set -> image default entrypoint/CMD runs (server /data, console :9001).
+# Host-publish is LOOPBACK-only (secure perimeter); traefik/n8n reach minio over the 'aether' net by hostname
+#   minio:9000, unaffected by the loopback host bind. Override for LAN console: change 127.0.0.1: -> 0.0.0.0: (not advised; route via traefik+zitadel auth instead).
+# Object/S3 semantics NOT probed here (a stray file in /data pollutes the bucket namespace) -> proven at Lane-A.
+# CONSOLE-PLACEMENT(J2-probe): 9010/ answers as S3 endpoint (root=403, XML/AccessDenied); web console NOT co-served; 9011 not listening. S3 API green (live=200 ready=200) is the steel thread and is all Lane-A needs. Do NOT override Exec (would bypass J1 first-run mc setup). Console, if wanted later, via supported env verified in docs, not guessed. image=docker.io/bitnamilegacy/minio:latest.
+# Known debt: EnvironmentFile injects ALL spine keys (env-spread); proper fix = podman secret + Secret= (queued post-green).
+[Container]
+Image=docker.io/bitnamilegacy/minio:latest
+ContainerName=minio
+Network=aether
+EnvironmentFile=/home/dev/.config/aether/secrets.env
+Volume=minio_data:/data
+PublishPort=127.0.0.1:9010:9000
+PublishPort=127.0.0.1:9011:9001
+
+[Service]
+Restart=always
+TimeoutStartSec=120
+MemoryMax=1G
+CPUQuota=50%

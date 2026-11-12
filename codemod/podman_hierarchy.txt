@@ -1,0 +1,29 @@
+~/DevOps/aether/                   # ONE root = ONE git repo (rename of ~/DevOps/aether)
+├── aetherctl                      # SOLE control plane: bootstrap|deploy|migrate <svc>|verify|status|backup|doctor
+├── .gitignore                     # ignores data/ backups/ infra/certs/ — bytes never enter git
+├── infra/
+│   ├── quadlet/                   # SOURCE of truth, flat, absolute paths ([ABS])
+│   │   ├── aether.network         #   shared netavark net (containers reference by name)
+│   │   └── {postgres,minio,weaviate,redis,ollama,litellm,n8n,zitadel,
+│   │        grafana,prometheus,node-exporter,mailpit,gitea,
+│   │        woodpecker-server,woodpecker-agent,traefik-edge}.container
+│   ├── render.list                # EXPLICIT manifest: source -> runtime path (no glob surprises)
+│   └── certs/                     # mkcert wildcard; gitignored; bootstrap regenerates
+├── apps/
+│   ├── n8n-workflows/             # lane_a_rag_v3.json + future exports (versioned artifacts)
+│   └── neo-cortex/                # Lane-B client later: Containerfile+compose(dev)+quadlet(prod)+src
+├── codemod/                         # NEW: every patch program I generate lands HERE first, then runs
+│   ├── INDEX.md                     #   append-only ledger: date | mode | target | gate result | rollback
+│   └── YYYYMMDD-<B|C>-<slug>.sh      #   self-logging: each script appends its own INDEX line on success
+├── data/  backups/                  # gitignored bind roots + dump/restic targets
+├── legacy/compose/                # old docker-compose*.yml PARKED read-only until each svc is migrated
+├── docs/
+│   ├── ADR-0001-runtime-podman-quadlet.md
+│   ├── ADR-0002-single-root-rendered-state.md   # THIS decision, on record
+│   └── RUNBOOK.md                 # bootstrap/deploy/restore = the move-aether guide
+└── secrets.example.env            # template ONLY
+
+
+# runtime side (outside repo, exactly two things):
+~/.config/containers/systemd/      # RENDERED copies (aetherctl writes; verify hashes)
+~/.config/aether/secrets.env       # 0600 single secrets file; EnvironmentFile= for all units

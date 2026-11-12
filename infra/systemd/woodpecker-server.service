@@ -1,0 +1,26 @@
+# Brick 10A: Woodpecker CI server (BP shared-network agent mode).
+# BP: cached-ref image policy; Postgres-backed; Gitea OAuth configured; loopback-only.
+# Image ref: docker.io/woodpeckerci/woodpecker-server:v3
+# Frozen digest (repodigest): docker.io/woodpeckerci/woodpecker-server@sha256:1ceacbdd53008948f9ee2f67fd80fe67469ccb24ec3619473d70983163aac28f
+# Host endpoint: http://127.0.0.1:8000
+# Internal HTTP: http://woodpecker-server:8000
+# Internal gRPC: 127.0.0.1:9000
+# Agent mode: --network container:woodpecker-server
+# Volume: woodpecker_server_data:/var/lib/woodpecker
+
+[Unit]
+Description=Woodpecker CI Server (Aether BP shared-net)
+After=network-online.target postgres.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/bash /home/dev/DevOps/aether/infra/scripts/aether-dns-wait.sh postgres
+ExecStart=/usr/bin/podman run --rm --replace --name woodpecker-server --network aether --publish 127.0.0.1:8000:8000 --memory 1024m --user 0:0 --security-opt=no-new-privileges --env-file /home/dev/DevOps/aether/secrets/woodpecker.env -v woodpecker_server_data:/var/lib/woodpecker docker.io/woodpeckerci/woodpecker-server:v3
+Restart=always
+RestartSec=3
+TimeoutStartSec=240
+Delegate=yes
+
+[Install]
+WantedBy=default.target

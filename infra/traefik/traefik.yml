@@ -1,0 +1,18 @@
+# Brick 11: Traefik static config (BQ). Loopback-only edge router.
+# Backticks below are literal Traefik rule syntax inside this quoted heredoc;
+# they are NOT shell command substitution.
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+entryPoints:
+  web:
+    address: ":8888"
+api:
+  dashboard: true
+providers:
+  file:
+    filename: "/etc/traefik/dynamic/dynamic.yml"
+    watch: false
+log:
+  level: INFO
+accessLog: {}

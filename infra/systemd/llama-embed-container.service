@@ -1,0 +1,13 @@
+[Unit]
+Description=llama.cpp embedding server container (nomic-embed-text-v1.5 Q8_0)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/podman run --rm --name llama-embed --security-opt=no-new-privileges --memory 1536m --network aether --publish 127.0.0.1:8081:8081 -v /home/dev/DevOps/neocortex/models/embedded:/models:ro --entrypoint /opt/llama/bin/llama-server localhost/aether-llama-runtime:glibc-match-v2 --model /models/nomic-embed-text-v1.5.Q8_0.gguf --host 0.0.0.0 --port 8081 --embedding --pooling mean --ctx-size 2048 --threads 2 --parallel 1 --alias nomic-embed-text
+Restart=always
+RestartSec=3
+TimeoutStartSec=180
+Delegate=yes
+
+[Install]
+WantedBy=default.target

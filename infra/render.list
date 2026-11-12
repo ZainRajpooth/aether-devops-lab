@@ -1,0 +1,4 @@
+infra/quadlet/aether.network .config/containers/systemd/aether.network
+infra/quadlet/node-exporter.container .config/containers/systemd/node-exporter.container
+infra/quadlet/prometheus.container .config/containers/systemd/prometheus.container
+infra/quadlet/mailpit.container .config/containers/systemd/mailpit.container

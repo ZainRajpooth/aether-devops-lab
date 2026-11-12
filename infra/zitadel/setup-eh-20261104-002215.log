@@ -1,0 +1,84 @@
+time="2026-11-03T19:22:15Z" level=info msg="initialization started" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/init.go:70"
+time="2026-11-03T19:22:15Z" level=info msg="verify user" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/verify_user.go:40" username=devops
+time="2026-11-03T19:22:15Z" level=info msg="verify database" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/verify_database.go:40" database=zitadel
+time="2026-11-03T19:22:15Z" level=info msg="verify grant" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/verify_grant.go:35" database=zitadel user=devops
+time="2026-11-03T19:22:15Z" level=info msg="verify zitadel" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/verify_zitadel.go:80" database=zitadel
+time="2026-11-03T19:22:15Z" level=info msg="verify system" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/verify_zitadel.go:46"
+time="2026-11-03T19:22:15Z" level=info msg="verify encryption keys" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/verify_zitadel.go:51"
+time="2026-11-03T19:22:16Z" level=info msg="verify projections" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/verify_zitadel.go:56"
+time="2026-11-03T19:22:16Z" level=info msg="verify eventstore" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/verify_zitadel.go:61"
+time="2026-11-03T19:22:16Z" level=info msg="verify events tables" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/verify_zitadel.go:66"
+time="2026-11-03T19:22:16Z" level=info msg="verify unique constraints" caller="/home/runner/work/zitadel/zitadel/cmd/initialise/verify_zitadel.go:71"
+time="2026-11-03T19:22:16Z" level=info msg="setup started" caller="/home/runner/work/zitadel/zitadel/cmd/setup/setup.go:108"
+time="2026-11-03T19:22:16Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=14_events_push
+time="2026-11-03T19:22:16Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=14_events_push
+time="2026-11-03T19:22:16Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=40_init_push_func_v4
+time="2026-11-03T19:22:16Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=40_init_push_func_v4
+time="2026-11-03T19:22:16Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/40.go:51" file=01_type.sql migration=40_init_push_func_v4
+time="2026-11-03T19:22:16Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/40.go:51" file=02_func.sql migration=40_init_push_func_v4
+time="2026-11-03T19:22:16Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=01_tables
+time="2026-11-03T19:22:16Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=01_tables
+time="2026-11-03T19:22:16Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=02_assets
+time="2026-11-03T19:22:16Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=02_assets
+time="2026-11-03T19:22:16Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=28_add_search_table
+time="2026-11-03T19:22:16Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=28_add_search_table
+time="2026-11-03T19:22:16Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=31_add_aggregate_index_to_fields
+time="2026-11-03T19:22:16Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=31_add_aggregate_index_to_fields
+time="2026-11-03T19:22:16Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=46_init_permission_functions
+time="2026-11-03T19:22:16Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=46_init_permission_functions
+time="2026-11-03T19:22:16Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/46.go:29" file=01-role_permissions_view.sql migration=46_init_permission_functions
+time="2026-11-03T19:22:16Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/46.go:29" file=02-instance_orgs_view.sql migration=46_init_permission_functions
+time="2026-11-03T19:22:16Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/46.go:29" file=03-instance_members_view.sql migration=46_init_permission_functions
+time="2026-11-03T19:22:16Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/46.go:29" file=04-org_members_view.sql migration=46_init_permission_functions
+time="2026-11-03T19:22:16Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/46.go:29" file=05-project_members_view.sql migration=46_init_permission_functions
+time="2026-11-03T19:22:16Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/46.go:29" file=06-permitted_orgs_function.sql migration=46_init_permission_functions
+time="2026-11-03T19:22:16Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=03_default_instance
+time="2026-11-03T19:22:16Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=03_default_instance
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=05_last_failed
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=05_last_failed
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=06_resource_owner_columns
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=06_resource_owner_columns
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=07_logstore
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=07_logstore
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=08_auth_token_indexes
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=08_auth_token_indexes
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=12_auth_users_otp_columns
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=12_auth_users_otp_columns
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=13_fix_quota_constraints
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=13_fix_quota_constraints
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=15_current_projection_state
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=15_current_projection_state
+time="2026-11-03T19:22:19Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/15.go:28" file=01_new_failed_events.sql migration=15_current_projection_state
+time="2026-11-03T19:22:19Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/15.go:28" file=02_fe_from_projections.sql migration=15_current_projection_state
+time="2026-11-03T19:22:19Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/15.go:28" file=03_fe_from_adminapi.sql migration=15_current_projection_state
+time="2026-11-03T19:22:19Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/15.go:28" file=04_fe_from_auth.sql migration=15_current_projection_state
+time="2026-11-03T19:22:19Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/15.go:28" file=05_current_states.sql migration=15_current_projection_state
+time="2026-11-03T19:22:19Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/15.go:28" file=06_cs_from_projections.sql migration=15_current_projection_state
+time="2026-11-03T19:22:19Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/15.go:28" file=07_cs_from_adminapi.sql migration=15_current_projection_state
+time="2026-11-03T19:22:19Z" level=info msg="execute statement" caller="/home/runner/work/zitadel/zitadel/cmd/setup/15.go:28" file=08_cs_from_auth.sql migration=15_current_projection_state
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=16_unique_constraint_lower
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=16_unique_constraint_lower
+time="2026-11-03T19:22:19Z" level=info msg="unique constraints updated" caller="/home/runner/work/zitadel/zitadel/cmd/setup/16.go:28" count=0
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=17_add_offset_col_to_current_states
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=17_add_offset_col_to_current_states
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=19_add_current_sequences_index
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=19_add_current_sequences_index
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=20_add_by_user_index_on_session
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=20_add_by_user_index_on_session
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=22_active_instance_events_index
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=22_active_instance_events_index
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=23_correct_global_unique_constraints
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=23_correct_global_unique_constraints
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=24_add_actor_col_to_auth_tokens
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=24_add_actor_col_to_auth_tokens
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=26_auth_users3
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=26_auth_users3
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=29_init_fields_for_project_grant
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=29_init_fields_for_project_grant
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=30_fill_fields_for_org_domain_verified
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=30_fill_fields_for_org_domain_verified
+time="2026-11-03T19:22:19Z" level=info msg="verify migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:43" name=34_add_cache_schema
+time="2026-11-03T19:22:19Z" level=info msg="starting migration" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:66" name=34_add_cache_schema
+time="2026-11-03T19:22:19Z" level=error msg="migration failed" caller="/home/runner/work/zitadel/zitadel/internal/migration/migration.go:68" error="ERROR: partitioned tables cannot be unlogged (SQLSTATE 0A000)" name=34_add_cache_schema
+time="2026-11-03T19:22:19Z" level=error msg="migration failed" caller="/home/runner/work/zitadel/zitadel/cmd/setup/setup.go:355" code=0A000 detail= error="ERROR: partitioned tables cannot be unlogged (SQLSTATE 0A000)" hint= message="partitioned tables cannot be unlogged" name=34_add_cache_schema severity=ERROR
+time="2026-11-03T19:22:19Z" level=fatal msg="setup failed, skipping cleanup" caller="/home/runner/work/zitadel/zitadel/cmd/setup/setup.go:124" error="migration failed: ERROR: partitioned tables cannot be unlogged (SQLSTATE 0A000)"

@@ -1,0 +1,14 @@
+# EXEMPLAR unit — proves render->start->gate before replicating to prometheus/mailpit/stateful.
+# [ABS] no relative paths | [SECRET-OUT] none needed here | loopback-only publish (perimeter posture)
+# MemoryMax/CPUQuota = the enforced ceiling the old compose tier never had (the quadlet thesis).
+[Container]
+Image=docker.io/prom/node-exporter:latest
+ContainerName=node-exporter
+Network=aether
+PublishPort=127.0.0.1:9100:9100
+
+[Service]
+Restart=always
+TimeoutStartSec=30
+MemoryMax=128M
+CPUQuota=25%

@@ -1,0 +1,59 @@
+# Brick 11: Traefik dynamic config (BQ). Host-based routers on the aether network.
+# Backticks are literal Traefik rule syntax inside this quoted heredoc, not shell substitution.
+http:
+  routers:
+    zitadel-single:
+      rule: "Host(`id.aether.home`)"
+      entryPoints: [web]
+      tls: {}
+      service: zitadel-single
+    gitea-router:
+      rule: "Host(`gitea.aether.local`)"
+      entryPoints: ["web"]
+      service: gitea-svc
+    woodpecker-router:
+      rule: "Host(`woodpecker.aether.local`)"
+      entryPoints: ["web"]
+      service: woodpecker-svc
+    grafana-router:
+      rule: "Host(`grafana.aether.local`)"
+      entryPoints: ["web"]
+      service: grafana-svc
+    n8n-router:
+      rule: "Host(`n8n.aether.local`)"
+      entryPoints: ["web"]
+      service: n8n-svc
+    traefik-dashboard-router:
+      rule: "Host(`traefik.aether.local`) && PathPrefix(`/dashboard`)"
+      entryPoints: ["web"]
+      service: api@internal
+    traefik-api-router:
+      rule: "Host(`traefik.aether.local`) && PathPrefix(`/api`)"
+      entryPoints: ["web"]
+      service: api@internal
+  services:
+    zitadel-single:
+      loadBalancer:
+        servers:
+          - url: "h2c://zitadel:8080"
+    gitea-svc:
+      loadBalancer:
+        servers:
+          - url: "http://gitea:3000"
+    woodpecker-svc:
+      loadBalancer:
+        servers:
+          - url: "http://woodpecker-server:8000"
+    grafana-svc:
+      loadBalancer:
+        servers:
+          - url: "http://grafana:3000"
+    n8n-svc:
+      loadBalancer:
+        servers:
+          - url: "http://n8n:5678"
+
+tls:
+  certificates:
+    - certFile: /etc/traefik/tls/leaf.pem
+      keyFile: /etc/traefik/tls/leaf-key.pem

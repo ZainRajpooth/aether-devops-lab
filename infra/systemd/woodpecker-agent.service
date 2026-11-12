@@ -1,0 +1,25 @@
+# Brick 10A: Woodpecker CI agent (BP shared-network mode).
+# BP: agent shares woodpecker-server network namespace; connects to 127.0.0.1:9000.
+# Image ref: docker.io/woodpeckerci/woodpecker-agent:v3
+# Frozen digest (repodigest): docker.io/woodpeckerci/woodpecker-agent@sha256:2713a2356a9af877d802d6a944529f27e649b4e397977a1e1a7449415e725ff6
+# Server target: 127.0.0.1:9000
+# Backend: docker via rootless Podman socket
+# Socket: /run/user/1000/podman/podman.sock:/var/run/docker.sock
+# Volume: woodpecker_agent_data:/var/lib/woodpecker
+
+[Unit]
+Description=Woodpecker CI Agent (Aether BP shared-net)
+After=network-online.target woodpecker-server.service
+Wants=network-online.target woodpecker-server.service
+
+[Service]
+Type=simple
+ExecStartPre=/bin/bash /home/dev/DevOps/aether/infra/scripts/woodpecker-server-wait.sh woodpecker-server 90 2
+ExecStart=/usr/bin/podman run --rm --replace --name woodpecker-agent --network container:woodpecker-server --memory 768m --user 0:0 --security-opt=no-new-privileges --env-file /home/dev/DevOps/aether/secrets/woodpecker.env -v /run/user/1000/podman/podman.sock:/var/run/docker.sock -v woodpecker_agent_data:/var/lib/woodpecker docker.io/woodpeckerci/woodpecker-agent:v3
+Restart=always
+RestartSec=3
+TimeoutStartSec=240
+Delegate=yes
+
+[Install]
+WantedBy=default.target

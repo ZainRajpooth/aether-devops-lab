@@ -1,0 +1,558 @@
+time=2026-11-02T18:38:54.246Z level=INFO msg="structured logger configured" config_level=INFO format=text
+time=2026-11-02T18:38:54.246Z level=INFO msg="initialization started" stream=runtime version=v4.20.0
+time=2026-11-02T18:38:54.266Z level=INFO msg="config.database.postgres.user.username is same as config.database.postgres.admin.username, skipping create user" stream=runtime version=v4.20.0 username=devops
+time=2026-11-02T18:38:54.266Z level=INFO msg="verify database" stream=runtime version=v4.20.0 database=zitadel
+time=2026-11-02T18:38:54.267Z level=INFO msg="config.database.postgres.user.username is same as config.database.postgres.admin.username, skipping grant" stream=runtime version=v4.20.0 username=devops
+time=2026-11-02T18:38:54.267Z level=INFO msg="verify zitadel" stream=runtime version=v4.20.0 database=zitadel
+time=2026-11-02T18:38:54.295Z level=INFO msg="verify system" stream=runtime version=v4.20.0
+time=2026-11-02T18:38:54.296Z level=INFO msg="verify encryption keys" stream=runtime version=v4.20.0
+time=2026-11-02T18:38:54.304Z level=INFO msg="verify projections" stream=runtime version=v4.20.0
+time=2026-11-02T18:38:54.306Z level=INFO msg="verify eventstore" stream=runtime version=v4.20.0
+time=2026-11-02T18:38:54.307Z level=INFO msg="verify events tables" stream=runtime version=v4.20.0
+time=2026-11-02T18:38:54.332Z level=INFO msg="verify unique constraints" stream=runtime version=v4.20.0
+time=2026-11-02T18:38:54.536Z level=INFO msg="setup started" stream=runtime version=v4.20.0
+time=2026-11-02T18:38:54.548Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=14_events_push
+time=2026-11-02T18:38:54.571Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=14_events_push
+time=2026-11-02T18:38:54.585Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=40_init_push_func_v4
+time=2026-11-02T18:38:54.595Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=40_init_push_func_v4
+time=2026-11-02T18:38:54.642Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=40_init_push_func_v4 file=01_type.sql migration=40_init_push_func_v4
+time=2026-11-02T18:38:54.643Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=40_init_push_func_v4 file=02_func.sql migration=40_init_push_func_v4
+time=2026-11-02T18:38:54.730Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=01_tables
+time=2026-11-02T18:38:54.735Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=01_tables
+time=2026-11-02T18:38:54.861Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=02_assets
+time=2026-11-02T18:38:54.865Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=02_assets
+time=2026-11-02T18:38:54.874Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=28_add_search_table
+time=2026-11-02T18:38:54.878Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=28_add_search_table
+time=2026-11-02T18:38:54.941Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=31_add_aggregate_index_to_fields
+time=2026-11-02T18:38:54.945Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=31_add_aggregate_index_to_fields
+time=2026-11-02T18:38:54.952Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=46_init_permission_functions
+time=2026-11-02T18:38:54.955Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=46_init_permission_functions
+time=2026-11-02T18:38:54.955Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=46_init_permission_functions file=01-role_permissions_view.sql migration=46_init_permission_functions
+time=2026-11-02T18:38:54.958Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=46_init_permission_functions file=02-instance_orgs_view.sql migration=46_init_permission_functions
+time=2026-11-02T18:38:54.960Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=46_init_permission_functions file=03-instance_members_view.sql migration=46_init_permission_functions
+time=2026-11-02T18:38:54.962Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=46_init_permission_functions file=04-org_members_view.sql migration=46_init_permission_functions
+time=2026-11-02T18:38:54.964Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=46_init_permission_functions file=05-project_members_view.sql migration=46_init_permission_functions
+time=2026-11-02T18:38:54.966Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=46_init_permission_functions file=06-permitted_orgs_function.sql migration=46_init_permission_functions
+time=2026-11-02T18:38:54.971Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=03_default_instance
+time=2026-11-02T18:38:54.975Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=03_default_instance
+time=2026-11-02T18:38:57.172Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=05_last_failed
+time=2026-11-02T18:38:57.176Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=05_last_failed
+time=2026-11-02T18:38:57.186Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=06_resource_owner_columns
+time=2026-11-02T18:38:57.189Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=06_resource_owner_columns
+time=2026-11-02T18:38:57.264Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=07_logstore
+time=2026-11-02T18:38:57.269Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=07_logstore
+time=2026-11-02T18:38:57.331Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=08_auth_token_indexes
+time=2026-11-02T18:38:57.335Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=08_auth_token_indexes
+time=2026-11-02T18:38:57.348Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=12_auth_users_otp_columns
+time=2026-11-02T18:38:57.351Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=12_auth_users_otp_columns
+time=2026-11-02T18:38:57.356Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=13_fix_quota_constraints
+time=2026-11-02T18:38:57.360Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=13_fix_quota_constraints
+time=2026-11-02T18:38:57.364Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=15_current_projection_state
+time=2026-11-02T18:38:57.368Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=15_current_projection_state
+time=2026-11-02T18:38:57.368Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=15_current_projection_state file=01_new_failed_events.sql migration=15_current_projection_state
+time=2026-11-02T18:38:57.382Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=15_current_projection_state file=02_fe_from_projections.sql migration=15_current_projection_state
+time=2026-11-02T18:38:57.387Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=15_current_projection_state file=03_fe_from_adminapi.sql migration=15_current_projection_state
+time=2026-11-02T18:38:57.390Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=15_current_projection_state file=04_fe_from_auth.sql migration=15_current_projection_state
+time=2026-11-02T18:38:57.392Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=15_current_projection_state file=05_current_states.sql migration=15_current_projection_state
+time=2026-11-02T18:38:57.431Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=15_current_projection_state file=06_cs_from_projections.sql migration=15_current_projection_state
+time=2026-11-02T18:38:57.434Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=15_current_projection_state file=07_cs_from_adminapi.sql migration=15_current_projection_state
+time=2026-11-02T18:38:57.441Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=15_current_projection_state file=08_cs_from_auth.sql migration=15_current_projection_state
+time=2026-11-02T18:38:57.448Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=16_unique_constraint_lower
+time=2026-11-02T18:38:57.457Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=16_unique_constraint_lower
+time=2026-11-02T18:38:57.460Z level=INFO msg="unique constraints updated" stream=runtime version=v4.20.0 name=16_unique_constraint_lower count=0
+time=2026-11-02T18:38:57.466Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=17_add_offset_col_to_current_states
+time=2026-11-02T18:38:57.469Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=17_add_offset_col_to_current_states
+time=2026-11-02T18:38:57.472Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=19_add_current_sequences_index
+time=2026-11-02T18:38:57.476Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=19_add_current_sequences_index
+time=2026-11-02T18:38:57.487Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=20_add_by_user_index_on_session
+time=2026-11-02T18:38:57.492Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=20_add_by_user_index_on_session
+time=2026-11-02T18:38:57.499Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=22_active_instance_events_index
+time=2026-11-02T18:38:57.503Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=22_active_instance_events_index
+time=2026-11-02T18:38:57.532Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=23_correct_global_unique_constraints
+time=2026-11-02T18:38:57.535Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=23_correct_global_unique_constraints
+time=2026-11-02T18:38:57.538Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=24_add_actor_col_to_auth_tokens
+time=2026-11-02T18:38:57.541Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=24_add_actor_col_to_auth_tokens
+time=2026-11-02T18:38:57.545Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=26_auth_users3
+time=2026-11-02T18:38:57.549Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=26_auth_users3
+time=2026-11-02T18:38:57.556Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=29_init_fields_for_project_grant
+time=2026-11-02T18:38:57.560Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=29_init_fields_for_project_grant
+time=2026-11-02T18:38:57.602Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=30_fill_fields_for_org_domain_verified
+time=2026-11-02T18:38:57.605Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=30_fill_fields_for_org_domain_verified
+time=2026-11-02T18:38:57.637Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=34_add_cache_schema
+time=2026-11-02T18:38:57.640Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=34_add_cache_schema
+time=2026-11-02T18:38:57.674Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=35_add_position_to_index_es_wm
+time=2026-11-02T18:38:57.679Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=35_add_position_to_index_es_wm
+time=2026-11-02T18:38:57.679Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=35_add_position_to_index_es_wm file=00_create_index.sql migration=35_add_position_to_index_es_wm
+time=2026-11-02T18:38:57.689Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=35_add_position_to_index_es_wm file=01_drop_index.sql migration=35_add_position_to_index_es_wm
+time=2026-11-02T18:38:57.693Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=35_add_position_to_index_es_wm file=02_alter_index.sql migration=35_add_position_to_index_es_wm
+time=2026-11-02T18:38:57.731Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=36_fill_v3_milestones
+time=2026-11-02T18:38:57.735Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=36_fill_v3_milestones
+time=2026-11-02T18:38:57.740Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=38_back_channel_logout_notification_start_
+time=2026-11-02T18:38:57.744Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=38_back_channel_logout_notification_start_
+time=2026-11-02T18:38:57.751Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=44_replace_current_sequences_index
+time=2026-11-02T18:38:57.755Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=44_replace_current_sequences_index
+time=2026-11-02T18:38:57.755Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=44_replace_current_sequences_index file=01_create_index.sql migration=44_replace_current_sequences_index
+time=2026-11-02T18:38:57.762Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=44_replace_current_sequences_index file=02_drop_old_index.sql migration=44_replace_current_sequences_index
+time=2026-11-02T18:38:57.771Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=43_correct_project_owners
+time=2026-11-02T18:38:57.776Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=43_correct_project_owners
+time=2026-11-02T18:38:57.777Z level=INFO msg="correct owners of projects" stream=runtime version=v4.20.0 name=43_correct_project_owners instance=397869555088621582 migration=43_correct_project_owners progress=1/1
+time=2026-11-02T18:38:57.785Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=47_fill_membership_fields
+time=2026-11-02T18:38:57.790Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=47_fill_membership_fields
+time=2026-11-02T18:38:57.803Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=49_init_permitted_orgs_function
+time=2026-11-02T18:38:57.808Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=49_init_permitted_orgs_function
+time=2026-11-02T18:38:57.808Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=49_init_permitted_orgs_function file=01-permitted_orgs_function.sql migration=49_init_permitted_orgs_function
+time=2026-11-02T18:38:57.831Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=50_idp_templates6_add_use_pkce
+time=2026-11-02T18:38:57.835Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=50_idp_templates6_add_use_pkce
+time=2026-11-02T18:38:57.838Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=51_idp_templates6_add_root_ca
+time=2026-11-02T18:38:57.844Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=51_idp_templates6_add_root_ca
+time=2026-11-02T18:38:57.849Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=52_idp_templates6_ldap2
+time=2026-11-02T18:38:57.854Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=52_idp_templates6_ldap2
+time=2026-11-02T18:38:57.868Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=53_init_permitted_orgs_function_v2
+time=2026-11-02T18:38:57.872Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=53_init_permitted_orgs_function_v2
+time=2026-11-02T18:38:57.872Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=53_init_permitted_orgs_function_v2 file=01-get-permissions-from-JSON.sql migration=53_init_permitted_orgs_function_v2
+time=2026-11-02T18:38:57.875Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=53_init_permitted_orgs_function_v2 file=02-permitted_orgs_function.sql migration=53_init_permitted_orgs_function_v2
+time=2026-11-02T18:38:57.878Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=53_init_permitted_orgs_function_v2 file=03-permitted_projects_func.sql migration=53_init_permitted_orgs_function_v2
+time=2026-11-02T18:38:57.883Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=54_instance_position_index_remove_again
+time=2026-11-02T18:38:57.888Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=54_instance_position_index_remove_again
+time=2026-11-02T18:38:57.892Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=55_execution_handler_start
+time=2026-11-02T18:38:57.898Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=55_execution_handler_start
+time=2026-11-02T18:38:57.903Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=56_idp_templates6_add_saml_federated_logout
+time=2026-11-02T18:38:57.907Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=56_idp_templates6_add_saml_federated_logout
+time=2026-11-02T18:38:57.929Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=57_create_resource_counts
+time=2026-11-02T18:38:57.935Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=57_create_resource_counts
+time=2026-11-02T18:38:57.950Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=58_replace_login_names3_view
+time=2026-11-02T18:38:57.953Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=58_replace_login_names3_view
+time=2026-11-02T18:38:57.958Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=60_generate_system_id
+time=2026-11-02T18:38:57.962Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=60_generate_system_id
+time=2026-11-02T18:38:57.966Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=61_idp_templates6_add_saml_signature_algorithm
+time=2026-11-02T18:38:57.969Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=61_idp_templates6_add_saml_signature_algorithm
+time=2026-11-02T18:38:57.971Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=62_http_provider_add_signing_key
+time=2026-11-02T18:38:57.976Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=62_http_provider_add_signing_key
+time=2026-11-02T18:38:57.979Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=63_alter_resource_counts
+time=2026-11-02T18:38:57.982Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=63_alter_resource_counts
+time=2026-11-02T18:38:57.988Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=64_change_push_position
+time=2026-11-02T18:38:57.992Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=64_change_push_position
+time=2026-11-02T18:38:58.056Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=65_fix_user_metadata5_index
+time=2026-11-02T18:38:58.064Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=65_fix_user_metadata5_index
+time=2026-11-02T18:38:58.068Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=67_sync_member_role_fields
+time=2026-11-02T18:38:58.074Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=67_sync_member_role_fields
+time=2026-11-02T18:38:58.084Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=69_cache_tables_logged
+time=2026-11-02T18:38:58.128Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=69_cache_tables_logged
+time=2026-11-02T18:38:58.136Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=70_add_eventstore_command_type_enforce_owner_column
+time=2026-11-02T18:38:58.141Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=70_add_eventstore_command_type_enforce_owner_column
+time=2026-11-02T18:38:58.231Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=76_users14_login_equality_indexes
+time=2026-11-02T18:38:58.238Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=76_users14_login_equality_indexes
+time=2026-11-02T18:38:58.251Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=77_eventstore_position_clock_timestamp
+time=2026-11-02T18:38:58.258Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=77_eventstore_position_clock_timestamp
+time=2026-11-02T18:38:58.342Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=78_unique_constraint_owners
+time=2026-11-02T18:38:58.350Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=78_unique_constraint_owners
+time=2026-11-02T18:38:58.350Z level=INFO msg="add unique constraint owners column" stream=runtime version=v4.20.0 name=78_unique_constraint_owners migration=78_unique_constraint_owners
+time=2026-11-02T18:38:58.352Z level=INFO msg="create unique constraint owners gin index concurrently" stream=runtime version=v4.20.0 name=78_unique_constraint_owners migration=78_unique_constraint_owners
+time=2026-11-02T18:38:58.366Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=80_users14_instance_resource_owner_idx
+time=2026-11-02T18:38:58.374Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=80_users14_instance_resource_owner_idx
+time=2026-11-02T18:38:58.440Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=config_change
+time=2026-11-02T18:38:58.447Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=config_change
+time=2026-11-02T18:38:58.451Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projection_tables
+time=2026-11-02T18:38:58.456Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projection_tables
+time=2026-11-02T18:38:59.648Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_delete_stale_org_fields
+time=2026-11-02T18:38:59.654Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_delete_stale_org_fields
+time=2026-11-02T18:38:59.655Z level=INFO msg="execute delete query" stream=runtime version=v4.20.0 name=repeatable_delete_stale_org_fields instance=397869555088621582 migration=repeatable_delete_stale_org_fields progress=1/1
+time=2026-11-02T18:38:59.663Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_fill_fields_for_instance_domains
+time=2026-11-02T18:38:59.667Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_fill_fields_for_instance_domains
+time=2026-11-02T18:38:59.699Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_sync_role_permissions
+time=2026-11-02T18:38:59.728Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_sync_role_permissions
+time=2026-11-02T18:38:59.728Z level=INFO msg="prepare system role permission sync events" stream=runtime version=v4.20.0 name=repeatable_sync_role_permissions migration=repeatable_sync_role_permissions
+time=2026-11-02T18:38:59.747Z level=INFO msg="pushed system role permission sync events" stream=runtime version=v4.20.0 name=repeatable_sync_role_permissions migration=repeatable_sync_role_permissions sequence=22
+time=2026-11-02T18:38:59.749Z level=INFO msg="prepare instance role permission sync events" stream=runtime version=v4.20.0 name=repeatable_sync_role_permissions migration=repeatable_sync_role_permissions instance=397869555088621582 progress=1/1
+time=2026-11-02T18:38:59.754Z level=INFO msg="pushed instance role permission sync events" stream=runtime version=v4.20.0 name=repeatable_sync_role_permissions migration=repeatable_sync_role_permissions instance=397869555088621582 sequence=0
+time=2026-11-02T18:38:59.757Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_migrate_river
+time=2026-11-02T18:38:59.763Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_migrate_river
+time=2026-11-02T18:38:59.935Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_eventstore_autovacuum
+time=2026-11-02T18:38:59.940Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_eventstore_autovacuum
+time=2026-11-02T18:38:59.945Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_instance_delete_parent_counts_trigger
+time=2026-11-02T18:38:59.950Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_instance_delete_parent_counts_trigger
+time=2026-11-02T18:38:59.955Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_organization_delete_parent_counts_trigger
+time=2026-11-02T18:38:59.959Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_organization_delete_parent_counts_trigger
+time=2026-11-02T18:38:59.964Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_organization_count_trigger
+time=2026-11-02T18:38:59.968Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_organization_count_trigger
+time=2026-11-02T18:38:59.976Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_project_count_trigger
+time=2026-11-02T18:38:59.980Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_project_count_trigger
+time=2026-11-02T18:38:59.986Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_user_count_trigger
+time=2026-11-02T18:38:59.991Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_user_count_trigger
+time=2026-11-02T18:38:59.998Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_user_machine_count_trigger
+time=2026-11-02T18:39:00.003Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_user_machine_count_trigger
+time=2026-11-02T18:39:00.028Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_iam_admin_count_trigger
+time=2026-11-02T18:39:00.033Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_iam_admin_count_trigger
+time=2026-11-02T18:39:00.040Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_identity_provider_count_trigger
+time=2026-11-02T18:39:00.045Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_identity_provider_count_trigger
+time=2026-11-02T18:39:00.052Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_identity_provider_count_trigger
+time=2026-11-02T18:39:00.058Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_identity_provider_count_trigger
+time=2026-11-02T18:39:00.065Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_identity_provider_ldap_count_trigger
+time=2026-11-02T18:39:00.071Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_identity_provider_ldap_count_trigger
+time=2026-11-02T18:39:00.077Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_action_v1_count_trigger
+time=2026-11-02T18:39:00.083Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_action_v1_count_trigger
+time=2026-11-02T18:39:00.089Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_execution_count_trigger
+time=2026-11-02T18:39:00.096Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_execution_count_trigger
+time=2026-11-02T18:39:00.102Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_execution_target_count_trigger
+time=2026-11-02T18:39:00.107Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_execution_target_count_trigger
+time=2026-11-02T18:39:00.113Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_login_policy_count_trigger
+time=2026-11-02T18:39:00.117Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_login_policy_count_trigger
+time=2026-11-02T18:39:00.131Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_enforce_mfa_count_trigger
+time=2026-11-02T18:39:00.136Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_enforce_mfa_count_trigger
+time=2026-11-02T18:39:00.144Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_password_complexity_policy_count_trigger
+time=2026-11-02T18:39:00.150Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_password_complexity_policy_count_trigger
+time=2026-11-02T18:39:00.158Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_password_expiry_policy_count_trigger
+time=2026-11-02T18:39:00.163Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_password_expiry_policy_count_trigger
+time=2026-11-02T18:39:00.169Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_lockout_policy_count_trigger
+time=2026-11-02T18:39:00.176Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_lockout_policy_count_trigger
+time=2026-11-02T18:39:00.182Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_password_change_notification_count_trigger
+time=2026-11-02T18:39:00.188Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_password_change_notification_count_trigger
+time=2026-11-02T18:39:00.195Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=repeatable_scim_provisioned_user_count_trigger
+time=2026-11-02T18:39:00.202Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=repeatable_scim_provisioned_user_count_trigger
+time=2026-11-02T18:39:00.209Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=18_add_lower_fields_to_login_names
+time=2026-11-02T18:39:00.215Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=18_add_lower_fields_to_login_names
+time=2026-11-02T18:39:00.232Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=21_add_block_field_to_limits
+time=2026-11-02T18:39:00.238Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=21_add_block_field_to_limits
+time=2026-11-02T18:39:00.242Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=25_user14_add_lower_fields_to_verified_email
+time=2026-11-02T18:39:00.247Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=25_user14_add_lower_fields_to_verified_email
+time=2026-11-02T18:39:00.260Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=27_idp_templates6_add_saml_name_id_format
+time=2026-11-02T18:39:00.267Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=27_idp_templates6_add_saml_name_id_format
+time=2026-11-02T18:39:00.270Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=32_add_auth_sessionID
+time=2026-11-02T18:39:00.275Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=32_add_auth_sessionID
+time=2026-11-02T18:39:00.326Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=33_sms_configs3_twilio_add_verification_sid
+time=2026-11-02T18:39:00.331Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=33_sms_configs3_twilio_add_verification_sid
+time=2026-11-02T18:39:00.336Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=37_apps7_oidc_configs_add_back_channel_logout_uri
+time=2026-11-02T18:39:00.341Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=37_apps7_oidc_configs_add_back_channel_logout_uri
+time=2026-11-02T18:39:00.345Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=40_apps7_oidc_configs_login_version
+time=2026-11-02T18:39:00.351Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=40_apps7_oidc_configs_login_version
+time=2026-11-02T18:39:00.354Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=43_create_fields_domain_index
+time=2026-11-02T18:39:00.360Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=43_create_fields_domain_index
+time=2026-11-02T18:39:00.360Z level=INFO msg="execute statement" stream=runtime version=v4.20.0 name=43_create_fields_domain_index file=43.sql migration=43_create_fields_domain_index
+time=2026-11-02T18:39:00.438Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=48_apps7_saml_configs_login_version
+time=2026-11-02T18:39:00.445Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=48_apps7_saml_configs_login_version
+time=2026-11-02T18:39:00.449Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=59_setup_webkeys
+time=2026-11-02T18:39:00.455Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=59_setup_webkeys
+time=2026-11-02T18:39:00.456Z level=INFO msg="prepare initial webkeys for instance" stream=runtime version=v4.20.0 name=59_setup_webkeys instance=397869555088621582 migration=59_setup_webkeys
+time=2026-11-02T18:39:00.460Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=66_session_recovery_code_checked_at
+time=2026-11-02T18:39:00.528Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=66_session_recovery_code_checked_at
+time=2026-11-02T18:39:00.532Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=68_target2_add_payload_type_authn_key2_fingerprint_expiration
+time=2026-11-02T18:39:00.538Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=68_target2_add_payload_type_authn_key2_fingerprint_expiration
+time=2026-11-02T18:39:00.543Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=71_idp_templates6_jwt_add_audience
+time=2026-11-02T18:39:00.547Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=71_idp_templates6_jwt_add_audience
+time=2026-11-02T18:39:00.551Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=72_add_columns_to_login_names_view
+time=2026-11-02T18:39:00.556Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=72_add_columns_to_login_names_view
+time=2026-11-02T18:39:00.629Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=73_fix_user_grant_roles
+time=2026-11-02T18:39:00.636Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=73_fix_user_grant_roles
+time=2026-11-02T18:39:00.637Z level=INFO msg="fix user grant roles" stream=runtime version=v4.20.0 name=73_fix_user_grant_roles instance=397869555088621582 migration=73_fix_user_grant_roles progress=1/1
+time=2026-11-02T18:39:00.654Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=74_apps7_oidc_configs_add_registration_token
+time=2026-11-02T18:39:00.728Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=74_apps7_oidc_configs_add_registration_token
+time=2026-11-02T18:39:00.732Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=75_apps7_oidc_configs_add_app_link_config
+time=2026-11-02T18:39:00.737Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=75_apps7_oidc_configs_add_app_link_config
+time=2026-11-02T18:39:00.741Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.orgs1
+time=2026-11-02T18:39:00.746Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.orgs1
+time=2026-11-02T18:39:00.747Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.orgs1 projection=projections.orgs1
+time=2026-11-02T18:39:00.756Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.orgs1 projection=projections.orgs1 took=9.298245ms
+time=2026-11-02T18:39:00.759Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.org_metadata2
+time=2026-11-02T18:39:00.765Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.org_metadata2
+time=2026-11-02T18:39:00.765Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.org_metadata2 projection=projections.org_metadata2
+time=2026-11-02T18:39:00.769Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.org_metadata2 projection=projections.org_metadata2 took=4.580481ms
+time=2026-11-02T18:39:00.773Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.actions3
+time=2026-11-02T18:39:00.781Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.actions3
+time=2026-11-02T18:39:00.781Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.actions3 projection=projections.actions3
+time=2026-11-02T18:39:00.787Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.actions3 projection=projections.actions3 took=5.829863ms
+time=2026-11-02T18:39:00.790Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.flow_triggers3
+time=2026-11-02T18:39:00.797Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.flow_triggers3
+time=2026-11-02T18:39:00.797Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.flow_triggers3 projection=projections.flow_triggers3
+time=2026-11-02T18:39:00.826Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.flow_triggers3 projection=projections.flow_triggers3 took=29.160964ms
+time=2026-11-02T18:39:00.829Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.projects4
+time=2026-11-02T18:39:00.836Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.projects4
+time=2026-11-02T18:39:00.836Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.projects4 projection=projections.projects4
+time=2026-11-02T18:39:00.843Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.projects4 projection=projections.projects4 took=6.982082ms
+time=2026-11-02T18:39:00.846Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.password_complexity_policies2
+time=2026-11-02T18:39:00.856Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.password_complexity_policies2
+time=2026-11-02T18:39:00.856Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.password_complexity_policies2 projection=projections.password_complexity_policies2
+time=2026-11-02T18:39:00.863Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.password_complexity_policies2 projection=projections.password_complexity_policies2 took=6.932173ms
+time=2026-11-02T18:39:00.866Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.password_age_policies2
+time=2026-11-02T18:39:00.873Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.password_age_policies2
+time=2026-11-02T18:39:00.873Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.password_age_policies2 projection=projections.password_age_policies2
+time=2026-11-02T18:39:00.880Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.password_age_policies2 projection=projections.password_age_policies2 took=6.495795ms
+time=2026-11-02T18:39:00.883Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.lockout_policies3
+time=2026-11-02T18:39:00.888Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.lockout_policies3
+time=2026-11-02T18:39:00.888Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.lockout_policies3 projection=projections.lockout_policies3
+time=2026-11-02T18:39:00.894Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.lockout_policies3 projection=projections.lockout_policies3 took=5.788129ms
+time=2026-11-02T18:39:00.897Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.privacy_policies4
+time=2026-11-02T18:39:00.902Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.privacy_policies4
+time=2026-11-02T18:39:00.902Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.privacy_policies4 projection=projections.privacy_policies4
+time=2026-11-02T18:39:00.907Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.privacy_policies4 projection=projections.privacy_policies4 took=5.036681ms
+time=2026-11-02T18:39:00.911Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.domain_policies2
+time=2026-11-02T18:39:00.932Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.domain_policies2
+time=2026-11-02T18:39:00.932Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.domain_policies2 projection=projections.domain_policies2
+time=2026-11-02T18:39:00.937Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.domain_policies2 projection=projections.domain_policies2 took=5.133189ms
+time=2026-11-02T18:39:00.940Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.label_policies3
+time=2026-11-02T18:39:00.945Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.label_policies3
+time=2026-11-02T18:39:00.945Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.label_policies3 projection=projections.label_policies3
+time=2026-11-02T18:39:00.953Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.label_policies3 projection=projections.label_policies3 took=7.671758ms
+time=2026-11-02T18:39:00.956Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.project_grants4
+time=2026-11-02T18:39:00.962Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.project_grants4
+time=2026-11-02T18:39:00.962Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.project_grants4 projection=projections.project_grants4
+time=2026-11-02T18:39:00.965Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.project_grants4 projection=projections.project_grants4 took=3.602717ms
+time=2026-11-02T18:39:00.968Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.project_roles4
+time=2026-11-02T18:39:00.978Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.project_roles4
+time=2026-11-02T18:39:00.978Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.project_roles4 projection=projections.project_roles4
+time=2026-11-02T18:39:00.981Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.project_roles4 projection=projections.project_roles4 took=2.979768ms
+time=2026-11-02T18:39:00.984Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.org_domains2
+time=2026-11-02T18:39:00.989Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.org_domains2
+time=2026-11-02T18:39:00.990Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.org_domains2 projection=projections.org_domains2
+time=2026-11-02T18:39:00.995Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.org_domains2 projection=projections.org_domains2 took=5.764269ms
+time=2026-11-02T18:39:00.998Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.login_policies5
+time=2026-11-02T18:39:01.027Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.login_policies5
+time=2026-11-02T18:39:01.027Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.login_policies5 projection=projections.login_policies5
+time=2026-11-02T18:39:01.041Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.login_policies5 projection=projections.login_policies5 took=13.556212ms
+time=2026-11-02T18:39:01.044Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.idps3
+time=2026-11-02T18:39:01.052Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.idps3
+time=2026-11-02T18:39:01.052Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.idps3 projection=projections.idps3
+time=2026-11-02T18:39:01.062Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.idps3 projection=projections.idps3 took=10.227576ms
+time=2026-11-02T18:39:01.067Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.idp_templates6
+time=2026-11-02T18:39:01.075Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.idp_templates6
+time=2026-11-02T18:39:01.075Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.idp_templates6 projection=projections.idp_templates6
+time=2026-11-02T18:39:01.080Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.idp_templates6 projection=projections.idp_templates6 took=5.015811ms
+time=2026-11-02T18:39:01.084Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.apps7
+time=2026-11-02T18:39:01.094Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.apps7
+time=2026-11-02T18:39:01.094Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.apps7 projection=projections.apps7
+time=2026-11-02T18:39:01.106Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.apps7 projection=projections.apps7 took=12.358684ms
+time=2026-11-02T18:39:01.110Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.idp_user_links3
+time=2026-11-02T18:39:01.115Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.idp_user_links3
+time=2026-11-02T18:39:01.115Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.idp_user_links3 projection=projections.idp_user_links3
+time=2026-11-02T18:39:01.118Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.idp_user_links3 projection=projections.idp_user_links3 took=2.700895ms
+time=2026-11-02T18:39:01.121Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.idp_login_policy_links5
+time=2026-11-02T18:39:01.130Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.idp_login_policy_links5
+time=2026-11-02T18:39:01.130Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.idp_login_policy_links5 projection=projections.idp_login_policy_links5
+time=2026-11-02T18:39:01.133Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.idp_login_policy_links5 projection=projections.idp_login_policy_links5 took=3.241034ms
+time=2026-11-02T18:39:01.137Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.mail_templates2
+time=2026-11-02T18:39:01.142Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.mail_templates2
+time=2026-11-02T18:39:01.142Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.mail_templates2 projection=projections.mail_templates2
+time=2026-11-02T18:39:01.147Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.mail_templates2 projection=projections.mail_templates2 took=5.020753ms
+time=2026-11-02T18:39:01.150Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.message_texts2
+time=2026-11-02T18:39:01.157Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.message_texts2
+time=2026-11-02T18:39:01.157Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.message_texts2 projection=projections.message_texts2
+time=2026-11-02T18:39:01.191Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.message_texts2 projection=projections.message_texts2 took=33.281883ms
+time=2026-11-02T18:39:01.194Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.custom_texts2
+time=2026-11-02T18:39:01.201Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.custom_texts2
+time=2026-11-02T18:39:01.201Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.custom_texts2 projection=projections.custom_texts2
+time=2026-11-02T18:39:01.246Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.custom_texts2 projection=projections.custom_texts2 took=45.69963ms
+time=2026-11-02T18:39:01.249Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.users14
+time=2026-11-02T18:39:01.256Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.users14
+time=2026-11-02T18:39:01.256Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.users14 projection=projections.users14
+time=2026-11-02T18:39:01.268Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.users14 projection=projections.users14 took=11.237482ms
+time=2026-11-02T18:39:01.271Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.login_names3
+time=2026-11-02T18:39:01.276Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.login_names3
+time=2026-11-02T18:39:01.276Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.login_names3 projection=projections.login_names3
+time=2026-11-02T18:39:01.284Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.login_names3 projection=projections.login_names3 took=8.763175ms
+time=2026-11-02T18:39:01.287Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.org_members4
+time=2026-11-02T18:39:01.293Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.org_members4
+time=2026-11-02T18:39:01.293Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.org_members4 projection=projections.org_members4
+time=2026-11-02T18:39:01.328Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.org_members4 projection=projections.org_members4 took=34.851862ms
+time=2026-11-02T18:39:01.332Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.instance_domains
+time=2026-11-02T18:39:01.338Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.instance_domains
+time=2026-11-02T18:39:01.339Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.instance_domains projection=projections.instance_domains
+time=2026-11-02T18:39:01.346Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.instance_domains projection=projections.instance_domains took=6.982851ms
+time=2026-11-02T18:39:01.348Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.instance_trusted_domains
+time=2026-11-02T18:39:01.358Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.instance_trusted_domains
+time=2026-11-02T18:39:01.358Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.instance_trusted_domains projection=projections.instance_trusted_domains
+time=2026-11-02T18:39:01.361Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.instance_trusted_domains projection=projections.instance_trusted_domains took=3.518915ms
+time=2026-11-02T18:39:01.365Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.instance_members4
+time=2026-11-02T18:39:01.373Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.instance_members4
+time=2026-11-02T18:39:01.373Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.instance_members4 projection=projections.instance_members4
+time=2026-11-02T18:39:01.380Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.instance_members4 projection=projections.instance_members4 took=7.091382ms
+time=2026-11-02T18:39:01.384Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.project_members4
+time=2026-11-02T18:39:01.393Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.project_members4
+time=2026-11-02T18:39:01.393Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.project_members4 projection=projections.project_members4
+time=2026-11-02T18:39:01.397Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.project_members4 projection=projections.project_members4 took=4.103102ms
+time=2026-11-02T18:39:01.401Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.project_grant_members4
+time=2026-11-02T18:39:01.408Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.project_grant_members4
+time=2026-11-02T18:39:01.408Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.project_grant_members4 projection=projections.project_grant_members4
+time=2026-11-02T18:39:01.412Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.project_grant_members4 projection=projections.project_grant_members4 took=3.36556ms
+time=2026-11-02T18:39:01.416Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.authn_keys2
+time=2026-11-02T18:39:01.423Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.authn_keys2
+time=2026-11-02T18:39:01.423Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.authn_keys2 projection=projections.authn_keys2
+time=2026-11-02T18:39:01.429Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.authn_keys2 projection=projections.authn_keys2 took=5.768494ms
+time=2026-11-02T18:39:01.432Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.personal_access_tokens3
+time=2026-11-02T18:39:01.439Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.personal_access_tokens3
+time=2026-11-02T18:39:01.439Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.personal_access_tokens3 projection=projections.personal_access_tokens3
+time=2026-11-02T18:39:01.443Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.personal_access_tokens3 projection=projections.personal_access_tokens3 took=4.855894ms
+time=2026-11-02T18:39:01.448Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.user_grants5
+time=2026-11-02T18:39:01.456Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.user_grants5
+time=2026-11-02T18:39:01.456Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.user_grants5 projection=projections.user_grants5
+time=2026-11-02T18:39:01.460Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.user_grants5 projection=projections.user_grants5 took=4.084459ms
+time=2026-11-02T18:39:01.463Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.user_metadata5
+time=2026-11-02T18:39:01.469Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.user_metadata5
+time=2026-11-02T18:39:01.469Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.user_metadata5 projection=projections.user_metadata5
+time=2026-11-02T18:39:01.472Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.user_metadata5 projection=projections.user_metadata5 took=2.805256ms
+time=2026-11-02T18:39:01.475Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.user_auth_methods5
+time=2026-11-02T18:39:01.480Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.user_auth_methods5
+time=2026-11-02T18:39:01.480Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.user_auth_methods5 projection=projections.user_auth_methods5
+time=2026-11-02T18:39:01.483Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.user_auth_methods5 projection=projections.user_auth_methods5 took=3.058334ms
+time=2026-11-02T18:39:01.486Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.instances
+time=2026-11-02T18:39:01.492Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.instances
+time=2026-11-02T18:39:01.492Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.instances projection=projections.instances
+time=2026-11-02T18:39:01.498Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.instances projection=projections.instances took=6.037635ms
+time=2026-11-02T18:39:01.501Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.secret_generators2
+time=2026-11-02T18:39:01.506Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.secret_generators2
+time=2026-11-02T18:39:01.506Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.secret_generators2 projection=projections.secret_generators2
+time=2026-11-02T18:39:01.513Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.secret_generators2 projection=projections.secret_generators2 took=6.884226ms
+time=2026-11-02T18:39:01.516Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.smtp_configs6
+time=2026-11-02T18:39:01.529Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.smtp_configs6
+time=2026-11-02T18:39:01.529Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.smtp_configs6 projection=projections.smtp_configs6
+time=2026-11-02T18:39:01.532Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.smtp_configs6 projection=projections.smtp_configs6 took=3.39762ms
+time=2026-11-02T18:39:01.535Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.sms_configs3
+time=2026-11-02T18:39:01.541Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.sms_configs3
+time=2026-11-02T18:39:01.542Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.sms_configs3 projection=projections.sms_configs3
+time=2026-11-02T18:39:01.544Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.sms_configs3 projection=projections.sms_configs3 took=2.926774ms
+time=2026-11-02T18:39:01.547Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.oidc_settings2
+time=2026-11-02T18:39:01.553Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.oidc_settings2
+time=2026-11-02T18:39:01.553Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.oidc_settings2 projection=projections.oidc_settings2
+time=2026-11-02T18:39:01.556Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.oidc_settings2 projection=projections.oidc_settings2 took=3.677841ms
+time=2026-11-02T18:39:01.559Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.notification_providers
+time=2026-11-02T18:39:01.567Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.notification_providers
+time=2026-11-02T18:39:01.567Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.notification_providers projection=projections.notification_providers
+time=2026-11-02T18:39:01.570Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.notification_providers projection=projections.notification_providers took=3.103665ms
+time=2026-11-02T18:39:01.573Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.keys4
+time=2026-11-02T18:39:01.581Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.keys4
+time=2026-11-02T18:39:01.581Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.keys4 projection=projections.keys4
+time=2026-11-02T18:39:01.585Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.keys4 projection=projections.keys4 took=3.681636ms
+time=2026-11-02T18:39:01.588Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.security_policies3
+time=2026-11-02T18:39:01.596Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.security_policies3
+time=2026-11-02T18:39:01.596Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.security_policies3 projection=projections.security_policies3
+time=2026-11-02T18:39:01.600Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.security_policies3 projection=projections.security_policies3 took=3.760363ms
+time=2026-11-02T18:39:01.604Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.notification_policies
+time=2026-11-02T18:39:01.612Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.notification_policies
+time=2026-11-02T18:39:01.612Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.notification_policies projection=projections.notification_policies
+time=2026-11-02T18:39:01.618Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.notification_policies projection=projections.notification_policies took=6.371382ms
+time=2026-11-02T18:39:01.622Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.device_auth_requests2
+time=2026-11-02T18:39:01.629Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.device_auth_requests2
+time=2026-11-02T18:39:01.629Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.device_auth_requests2 projection=projections.device_auth_requests2
+time=2026-11-02T18:39:01.632Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.device_auth_requests2 projection=projections.device_auth_requests2 took=3.341389ms
+time=2026-11-02T18:39:01.636Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.sessions8
+time=2026-11-02T18:39:01.646Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.sessions8
+time=2026-11-02T18:39:01.646Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.sessions8 projection=projections.sessions8
+time=2026-11-02T18:39:01.649Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.sessions8 projection=projections.sessions8 took=3.105976ms
+time=2026-11-02T18:39:01.652Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.auth_requests
+time=2026-11-02T18:39:01.659Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.auth_requests
+time=2026-11-02T18:39:01.659Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.auth_requests projection=projections.auth_requests
+time=2026-11-02T18:39:01.662Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.auth_requests projection=projections.auth_requests took=3.216582ms
+time=2026-11-02T18:39:01.665Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.saml_requests
+time=2026-11-02T18:39:01.670Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.saml_requests
+time=2026-11-02T18:39:01.670Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.saml_requests projection=projections.saml_requests
+time=2026-11-02T18:39:01.673Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.saml_requests projection=projections.saml_requests took=3.022303ms
+time=2026-11-02T18:39:01.676Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.milestones3
+time=2026-11-02T18:39:01.684Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.milestones3
+time=2026-11-02T18:39:01.684Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.milestones3 projection=projections.milestones3
+time=2026-11-02T18:39:01.689Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.milestones3 projection=projections.milestones3 took=4.659278ms
+time=2026-11-02T18:39:01.692Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.quotas
+time=2026-11-02T18:39:01.700Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.quotas
+time=2026-11-02T18:39:01.700Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.quotas projection=projections.quotas
+time=2026-11-02T18:39:01.703Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.quotas projection=projections.quotas took=3.053201ms
+time=2026-11-02T18:39:01.706Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.limits
+time=2026-11-02T18:39:01.715Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.limits
+time=2026-11-02T18:39:01.715Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.limits projection=projections.limits
+time=2026-11-02T18:39:01.720Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.limits projection=projections.limits took=4.689575ms
+time=2026-11-02T18:39:01.723Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.restrictions2
+time=2026-11-02T18:39:01.730Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.restrictions2
+time=2026-11-02T18:39:01.730Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.restrictions2 projection=projections.restrictions2
+time=2026-11-02T18:39:01.733Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.restrictions2 projection=projections.restrictions2 took=2.922532ms
+time=2026-11-02T18:39:01.737Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.system_features4
+time=2026-11-02T18:39:01.744Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.system_features4
+time=2026-11-02T18:39:01.744Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.system_features4 projection=projections.system_features4
+time=2026-11-02T18:39:01.747Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.system_features4 projection=projections.system_features4 took=3.359969ms
+time=2026-11-02T18:39:01.751Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.instance_features5
+time=2026-11-02T18:39:01.758Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.instance_features5
+time=2026-11-02T18:39:01.758Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.instance_features5 projection=projections.instance_features5
+time=2026-11-02T18:39:01.765Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.instance_features5 projection=projections.instance_features5 took=6.183264ms
+time=2026-11-02T18:39:01.768Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.targets2
+time=2026-11-02T18:39:01.774Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.targets2
+time=2026-11-02T18:39:01.774Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.targets2 projection=projections.targets2
+time=2026-11-02T18:39:01.777Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.targets2 projection=projections.targets2 took=2.892759ms
+time=2026-11-02T18:39:01.781Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.executions1
+time=2026-11-02T18:39:01.797Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.executions1
+time=2026-11-02T18:39:01.797Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.executions1 projection=projections.executions1
+time=2026-11-02T18:39:01.800Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.executions1 projection=projections.executions1 took=3.322319ms
+time=2026-11-02T18:39:01.803Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.user_schemas1
+time=2026-11-02T18:39:01.810Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.user_schemas1
+time=2026-11-02T18:39:01.810Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.user_schemas1 projection=projections.user_schemas1
+time=2026-11-02T18:39:01.813Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.user_schemas1 projection=projections.user_schemas1 took=3.208348ms
+time=2026-11-02T18:39:01.817Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.web_keys1
+time=2026-11-02T18:39:01.823Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.web_keys1
+time=2026-11-02T18:39:01.823Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.web_keys1 projection=projections.web_keys1
+time=2026-11-02T18:39:01.830Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.web_keys1 projection=projections.web_keys1 took=6.861861ms
+time=2026-11-02T18:39:01.833Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.debug_events
+time=2026-11-02T18:39:01.841Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.debug_events
+time=2026-11-02T18:39:01.841Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.debug_events projection=projections.debug_events
+time=2026-11-02T18:39:01.846Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.debug_events projection=projections.debug_events took=4.546719ms
+time=2026-11-02T18:39:01.849Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.hosted_login_translations
+time=2026-11-02T18:39:01.856Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.hosted_login_translations
+time=2026-11-02T18:39:01.856Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.hosted_login_translations projection=projections.hosted_login_translations
+time=2026-11-02T18:39:01.860Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.hosted_login_translations projection=projections.hosted_login_translations took=3.680883ms
+time=2026-11-02T18:39:01.863Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=adminapi.styling2
+time=2026-11-02T18:39:01.871Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=adminapi.styling2
+time=2026-11-02T18:39:01.871Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=adminapi.styling2 projection=adminapi.styling2
+time=2026-11-02T18:39:01.892Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=adminapi.styling2 projection=adminapi.styling2 took=21.008085ms
+time=2026-11-02T18:39:01.896Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=auth.users3
+time=2026-11-02T18:39:01.907Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=auth.users3
+time=2026-11-02T18:39:01.907Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=auth.users3 projection=auth.users3
+time=2026-11-02T18:39:01.914Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=auth.users3 projection=auth.users3 took=7.05062ms
+time=2026-11-02T18:39:01.918Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=auth.user_sessions
+time=2026-11-02T18:39:01.927Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=auth.user_sessions
+time=2026-11-02T18:39:01.927Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=auth.user_sessions projection=auth.user_sessions
+time=2026-11-02T18:39:01.932Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=auth.user_sessions projection=auth.user_sessions took=4.422286ms
+time=2026-11-02T18:39:01.936Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=auth.tokens
+time=2026-11-02T18:39:01.944Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=auth.tokens
+time=2026-11-02T18:39:01.944Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=auth.tokens projection=auth.tokens
+time=2026-11-02T18:39:01.948Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=auth.tokens projection=auth.tokens took=3.971411ms
+time=2026-11-02T18:39:01.952Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=auth.refresh_tokens
+time=2026-11-02T18:39:01.959Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=auth.refresh_tokens
+time=2026-11-02T18:39:01.959Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=auth.refresh_tokens projection=auth.refresh_tokens
+time=2026-11-02T18:39:01.962Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=auth.refresh_tokens projection=auth.refresh_tokens took=3.154902ms
+time=2026-11-02T18:39:01.967Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.notifications
+time=2026-11-02T18:39:01.980Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.notifications
+time=2026-11-02T18:39:01.980Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.notifications projection=projections.notifications
+time=2026-11-02T18:39:01.985Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.notifications projection=projections.notifications took=4.274188ms
+time=2026-11-02T18:39:01.988Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.notifications_quota
+time=2026-11-02T18:39:01.994Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.notifications_quota
+time=2026-11-02T18:39:01.994Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.notifications_quota projection=projections.notifications_quota
+time=2026-11-02T18:39:01.997Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.notifications_quota projection=projections.notifications_quota took=2.873533ms
+time=2026-11-02T18:39:02.000Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=projections.notifications_back_channel_logout
+time=2026-11-02T18:39:02.007Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=projections.notifications_back_channel_logout
+time=2026-11-02T18:39:02.007Z level=INFO msg="projection starts prefilling" stream=runtime version=v4.20.0 name=projections.notifications_back_channel_logout projection=projections.notifications_back_channel_logout
+time=2026-11-02T18:39:02.011Z level=INFO msg="projections ended prefilling" stream=runtime version=v4.20.0 name=projections.notifications_back_channel_logout projection=projections.notifications_back_channel_logout took=4.60094ms
+time=2026-11-02T18:39:02.014Z level=INFO msg="verify migration" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.020Z level=INFO msg="starting migration" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.025Z level=INFO msg="backfill unique constraint owners page" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners file=01_usernames_org_scoped.sql page=1 updated=0 migration=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.029Z level=INFO msg="backfill unique constraint owners page" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners file=02_usernames.sql page=1 updated=0 migration=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.035Z level=INFO msg="backfill unique constraint owners page" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners file=04_org_name.sql page=1 updated=0 migration=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.038Z level=INFO msg="backfill unique constraint owners page" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners file=05_org_domain.sql page=1 updated=0 migration=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.041Z level=INFO msg="backfill unique constraint owners page" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners file=06_project_names.sql page=1 updated=0 migration=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.044Z level=INFO msg="backfill unique constraint owners page" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners file=07_appname.sql page=1 updated=0 migration=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.058Z level=INFO msg="backfill unique constraint owners page" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners file=13_member_org.sql page=1 updated=0 migration=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.064Z level=INFO msg="backfill unique constraint owners page" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners file=15_member_instance.sql page=1 updated=0 migration=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.074Z level=INFO msg="unique constraint owners backfill complete" stream=runtime version=v4.20.0 name=79_backfill_unique_constraint_owners unmatched=0 unmatched_by_type=map[] finalized=false migration=79_backfill_unique_constraint_owners
+time=2026-11-02T18:39:02.079Z level=INFO msg="setup completed" stream=runtime version=v4.20.0
+  _____  ___   _____      _      ____    _____   _
+ |__  / |_ _| |_   _|    / \    |  _ \  | ____| | |
+   / /   | |    | |     / _ \   | | | | |  _|   | |
+  / /_   | |    | |    / ___ \  | |_| | | |___  | |___
+ /____| |___|   |_|   /_/   \_\ |____/  |_____| |_____|
+
+ ===============================================================
+
+ Version          		: v4.20.0
+ TLS enabled      		: true
+ External Secure 		: false
+ Machine Id Method		: Private Ip
+ Management Console URL	: https://127.0.0.1:8082/ui/console
+ Health Check URL 		: https://127.0.0.1:8082/debug/healthz
+
+ ===============================================================
+
+time="2026-11-02T18:39:02Z" level=info msg="scheduling service ping" caller="/home/runner/work/zitadel/zitadel/internal/serviceping/worker.go:285" interval="9 20 * * *"
+time=2026-11-02T18:39:02.639Z level=ERROR msg="zitadel start-from-init command failed" stream=runtime version=v4.20.0 err.kind=Unknown err.message="an unknown error occurred" err.id=LOG-ii6Pi err.parent="TLS is enabled: please specify a key (path) and a cert (path) or disable TLS if needed (e.g. by setting flag `--tlsMode external` or `--tlsMode disabled" err.reportLocation.filePath=/home/runner/work/zitadel/zitadel/cmd/start/start_from_init.go err.reportLocation.lineNumber=31 err.reportLocation.functionName=github.com/zitadel/zitadel/cmd/start.NewStartFromInit.func1.1
+Error: TLS is enabled: please specify a key (path) and a cert (path) or disable TLS if needed (e.g. by setting flag `--tlsMode external` or `--tlsMode disabled

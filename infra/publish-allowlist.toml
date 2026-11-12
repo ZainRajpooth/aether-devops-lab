@@ -1,0 +1,7 @@
+title = "aether publish-only gitleaks config (EX53d, probe-proven)"
+[extend]
+useDefault = true
+[[allowlists]]
+description = "aether ledger change-ids: lowercase slug -vN shell assignment, indentation-tolerant (non-secret)"
+regexTarget = "line"
+regexes = ['''^\s*[A-Za-z_][A-Za-z0-9_]*="[a-z0-9]+(?:-[a-z0-9]+)*-v[0-9]+"''']

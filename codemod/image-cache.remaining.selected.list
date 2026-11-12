@@ -1,0 +1,7 @@
+docker.io/gitea/gitea:latest
+docker.io/grafana/grafana:latest
+docker.io/library/traefik:latest
+docker.io/n8nio/n8n:latest
+docker.io/portainer/portainer-ce:latest
+ghcr.io/berriai/litellm:main-latest
+ghcr.io/zitadel/zitadel:latest

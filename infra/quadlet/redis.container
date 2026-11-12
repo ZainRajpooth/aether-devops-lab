@@ -1,0 +1,23 @@
+# STATEFUL brick 4 (redis). Auth via derived 0600 conf (secrets.env canonical; rotation = edit secrets.env + re-run).
+# No literal secret in this unit. The config mount is rw because the official redis entrypoint must chown/chmod
+# the config file before dropping from root to the redis user. A ro mount leaves the 0600 file unreadable after
+# privilege drop and produces: Fatal error, can't open config file ... Permission denied. The file remains outside
+# the repo and 0600; the extractor replaces it atomically so future rotations work after entrypoint chown.
+# Host-publish LOOPBACK-only; n8n reaches redis over the aether net by hostname redis:6379.
+# dir is forced to /data (= the redis_data volume) so persistence is on the volume.
+# Image: docker.io/library/redis:alpine. auth_source=argv requirepass_shape=len=36 has_space=no quoted=no
+[Container]
+Image=docker.io/library/redis:alpine
+ContainerName=redis
+Network=aether
+EnvironmentFile=/home/dev/.config/aether/secrets.env
+Volume=redis_data:/data
+Volume=/home/dev/.config/aether/redis/redis.conf:/etc/redis/redis.conf:rw
+PublishPort=127.0.0.1:6379:6379
+Exec=redis-server /etc/redis/redis.conf
+
+[Service]
+Restart=always
+TimeoutStartSec=60
+MemoryMax=384M
+CPUQuota=25%

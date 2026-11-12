@@ -1,0 +1,14 @@
+# CLEAN pilot — replaces stale dead-container source. [ABS] config bind = first end-to-end [ABS] test.
+[Container]
+Image=docker.io/prom/prometheus:latest
+ContainerName=prometheus
+Network=aether
+PublishPort=127.0.0.1:9090:9090
+Volume=/home/dev/DevOps/aether/infra/configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+Volume=prometheus_data:/prometheus
+
+[Service]
+Restart=always
+TimeoutStartSec=30
+MemoryMax=512M
+CPUQuota=50%

@@ -1,0 +1,16 @@
+# STATEFUL brick 1 (resumed by H2 after [S1] paste-exit death). EnvironmentFile=secrets.env (rotation=1-file edit).
+# DOCKER_PG_LLVM_DEPS omitted (build-time/inert; inlining re-imports escaping trap). no-new-privileges omitted (breaks root->postgres drop).
+[Container]
+Image=docker.io/library/postgres:19rc1-alpine
+ContainerName=postgres
+Network=aether
+EnvironmentFile=/home/dev/.config/aether/secrets.env
+Volume=postgres_data:/var/lib/postgresql/data
+Volume=/home/dev/DevOps/aether/infra/configs/postgres/initdb:/docker-entrypoint-initdb.d:ro
+PublishPort=127.0.0.1:5432:5432
+
+[Service]
+Restart=always
+TimeoutStartSec=120
+MemoryMax=1G
+CPUQuota=50%

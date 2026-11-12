@@ -1,0 +1,23 @@
+# Brick 11: Traefik edge router (BQ). Loopback-only; additive to direct publishes.
+# Image ref: docker.io/library/traefik:latest
+# Frozen digest (repodigest): docker.io/library/traefik@sha256:1336e85aaed293bd63d005086e0dd013b04078b26aaeb1c18b26a2f928af7e65
+# Entrypoint: http://127.0.0.1:8888  (80/443+TLS deferred)
+# Config (ro bind): /home/dev/DevOps/aether/infra/traefik -> /etc/traefik
+# Routing identity proven via Traefik API, not body sniffing (see DECISION row).
+
+[Unit]
+Description=Traefik Edge Router (Aether)
+After=network-online.target gitea.service grafana.service woodpecker-server.service n8n.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/bash /home/dev/DevOps/aether/infra/scripts/aether-dns-wait.sh gitea grafana woodpecker-server n8n
+ExecStart=/usr/bin/podman run --rm --replace --name traefik --network aether --publish 127.0.0.1:8888:8888 --memory 320m --user 0:0 --security-opt=no-new-privileges -v /home/dev/DevOps/aether/infra/traefik:/etc/traefik:ro docker.io/library/traefik:latest --configfile=/etc/traefik/traefik.yml
+Restart=always
+RestartSec=3
+TimeoutStartSec=180
+Delegate=yes
+
+[Install]
+WantedBy=default.target

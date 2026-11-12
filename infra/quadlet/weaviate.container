@@ -1,0 +1,20 @@
+# STATEFUL brick 3 (weaviate). Secrets via EnvironmentFile=secrets.env (single-source spine).
+# Image: docker.io/semitechnologies/weaviate:latest  (SUBSTITUTION: captured digest sha256:b32a76fa5c42202b3c9abdfeb2040af807dda5ba68d03554e3b5fa9f485512cb not pullable (registry GC) -> :latest (DRIFT: newer than captured; contract re-proven by gate)). No Exec -> image default runs 'weaviate serve' on :8080.
+# Host-publish LOOPBACK-only; n8n/traefik reach weaviate over 'aether' net by hostname weaviate:8080.
+# MemoryMax=2G = EliteBook constraint (udpate.md: weaviate heavy; runs module-less so 2G is a firm safe cap).
+# NO schema write / test collection here (would pollute weaviate namespace) -> Lane-A roundtrip deferred.
+# Known debt: EnvironmentFile injects ALL spine keys (env-spread); podman secret+Secret= refactor post-green.
+[Container]
+Image=docker.io/semitechnologies/weaviate:latest
+ContainerName=weaviate
+Network=aether
+EnvironmentFile=/home/dev/.config/aether/secrets.env
+Volume=weaviate_data:/var/lib/weaviate
+Volume=weaviate_backups:/backups
+PublishPort=127.0.0.1:8080:8080
+
+[Service]
+Restart=always
+TimeoutStartSec=120
+MemoryMax=2G
+CPUQuota=50%

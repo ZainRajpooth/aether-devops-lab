@@ -1,0 +1,27 @@
+# Brick 8: Grafana OSS as a rootless Podman container service.
+# BD observable gate heal: root_named, loopback-only, Postgres-backed, Prometheus datasource.
+# Container name: grafana
+# Network: aether
+# Host admin endpoint: http://127.0.0.1:3000
+# Internal endpoint: http://grafana:3000
+# DB: postgres role=grafana db=grafana
+# DataSource: Prometheus http://prometheus:9090 uid=prometheus-aether
+# Dashboard: aether-overview
+
+[Unit]
+Description=Grafana OSS (Aether observability, BD healed)
+After=network-online.target postgres.service prometheus.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+# BF hardening: block start until aether DNS resolves backing hosts (fixes BD [D9] SERVFAIL cold-start loop).
+ExecStartPre=/bin/bash /home/dev/DevOps/aether/infra/scripts/grafana-dns-wait.sh postgres prometheus
+ExecStart=/usr/bin/podman run --rm --replace --name grafana --network aether --publish 127.0.0.1:3000:3000 --memory 1536m --user 0:0 --security-opt=no-new-privileges --env-file /home/dev/DevOps/aether/secrets/grafana.env -v /home/dev/DevOps/aether/config/grafana/provisioning:/etc/grafana/provisioning:ro -v grafana_data:/var/lib/grafana -e GF_SERVER_ROOT_URL=http://127.0.0.1:3000/ -e GF_SERVER_HTTP_PORT=3000 -e GF_AUTH_ANONYMOUS_ENABLED=false -e GF_PLUGINS_PLUGIN_ADMIN_ENABLED=false -e GF_PLUGINS_AUTO_UPDATE=false -e GF_ANALYTICS_REPORTING_ENABLED=false -e GF_ANALYTICS_CHECK_FOR_UPDATES=false docker.io/grafana/grafana:latest
+Restart=always
+RestartSec=3
+TimeoutStartSec=240
+Delegate=yes
+
+[Install]
+WantedBy=default.target

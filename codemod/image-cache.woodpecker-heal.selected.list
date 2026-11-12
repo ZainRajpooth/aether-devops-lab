@@ -1,0 +1,2 @@
+docker.io/woodpeckerci/woodpecker-agent:v3
+docker.io/woodpeckerci/woodpecker-server:v3

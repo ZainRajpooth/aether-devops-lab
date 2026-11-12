@@ -1,0 +1,21 @@
+# Brick 5: llama.cpp embedding server (native systemd user service; NOT a container; NOT Ollama).
+# Model is the existing on-disk GGUF; loopback-only; ceilings sized for i5-3360M/16GiB alongside the stack.
+# Flags composed only from llama-server --help capability probe (recognition-complete-or-halt).
+[Unit]
+Description=llama.cpp embedding server (nomic-embed-text-v1.5 Q8_0)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/dev/DevOps/neocortex/cpp/llama.cpp/build/bin/llama-server --model /home/dev/DevOps/neocortex/models/embedded/nomic-embed-text-v1.5.Q8_0.gguf --host 127.0.0.1 --port 8081 --embedding --pooling mean --ctx-size 2048 --threads 2 --parallel 1 --alias nomic-embed-text
+Restart=always
+RestartSec=3
+TimeoutStartSec=120
+MemoryMax=1G
+CPUQuota=50%
+Nice=10
+NoNewPrivileges=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,23 @@
+# Brick 9: Gitea as a rootless Podman container service.
+# BI: cached-ref-first image policy; Postgres-backed; loopback-only; no SSH published.
+# Image ref: docker.io/gitea/gitea:latest
+# Frozen digest (repodigest): docker.io/gitea/gitea@sha256:30777c91280d973fa02be48b1ade735bd6859e8f6f7af3b4444d519437852504
+# Host endpoint: http://127.0.0.1:3001 ; internal: http://gitea:3000
+# DB: postgres role=gitea db=gitea ; volume gitea_data:/data
+
+[Unit]
+Description=Gitea (Aether Git server)
+After=network-online.target postgres.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/bash /home/dev/DevOps/aether/infra/scripts/aether-dns-wait.sh postgres
+ExecStart=/usr/bin/podman run --rm --replace --name gitea --network aether --publish 127.0.0.1:3001:3000 --memory 1536m --user 0:0 --security-opt=no-new-privileges --env-file /home/dev/DevOps/aether/secrets/gitea.env -v gitea_data:/data docker.io/gitea/gitea:latest
+Restart=always
+RestartSec=3
+TimeoutStartSec=240
+Delegate=yes
+
+[Install]
+WantedBy=default.target

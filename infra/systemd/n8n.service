@@ -1,0 +1,24 @@
+# Brick 7 healed: n8n workflow automation as a rootless Podman container service.
+# AY forces N8N_USER_FOLDER and HOME to avoid EACCES mkdir /.n8n.
+# Selected candidate: keepid_named
+# Container name: n8n
+# Network: aether
+# Host admin endpoint: http://127.0.0.1:5678
+# Internal endpoint: http://n8n:5678
+# DB: postgresdb via secrets spine; no SQLite.
+
+[Unit]
+Description=n8n workflow automation (Postgres-backed, AY healed)
+After=network-online.target postgres.service litellm.service llama-embed-container.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/podman run --rm --replace --name n8n --network aether --publish 127.0.0.1:5678:5678 --memory 1536m --security-opt=no-new-privileges --env-file /home/dev/.config/aether/secrets.env --env-file /home/dev/DevOps/aether/secrets/litellm.env -e DB_TYPE=postgresdb -e DB_POSTGRESDB_HOST=postgres -e DB_POSTGRESDB_PORT=5432 -e N8N_USER_FOLDER=/home/node/.n8n -e N8N_HOST=0.0.0.0 -e N8N_PROTOCOL=http -e N8N_PORT=5678 -e WEBHOOK_URL=http://127.0.0.1:5678/ -e N8N_EDITOR_BASE_URL=http://127.0.0.1:5678/ -e GENERIC_TIMEZONE=UTC -e N8N_DIAGNOSTICS_ENABLED=false --userns=keep-id -e HOME=/home/node -v n8n_data:/home/node/.n8n docker.io/n8nio/n8n:latest
+Restart=always
+RestartSec=3
+TimeoutStartSec=240
+Delegate=yes
+
+[Install]
+WantedBy=default.target

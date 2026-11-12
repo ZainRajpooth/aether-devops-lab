@@ -1,0 +1,13 @@
+# CLEAN pilot — replaces stale dead-container source. Stateless catcher (in-memory); no secrets, no data vol.
+[Container]
+Image=docker.io/axllent/mailpit:latest
+ContainerName=mailpit
+Network=aether
+PublishPort=127.0.0.1:1025:1025
+PublishPort=127.0.0.1:8025:8025
+
+[Service]
+Restart=always
+TimeoutStartSec=30
+MemoryMax=128M
+CPUQuota=25%

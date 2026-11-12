@@ -1,0 +1,23 @@
+# Brick 6: LiteLLM gateway as a rootless Podman container service.
+# AW clean ExecStart: flat argument array, no backslash continuations.
+# Container name: litellm
+# Network: aether
+# Host admin endpoint: http://127.0.0.1:4000
+# Internal upstream for n8n/RAG: http://litellm:4000/v1
+# Model: local-embed -> http://llama-embed:8081/v1
+
+[Unit]
+Description=LiteLLM gateway (local OpenAI-compatible router)
+After=network-online.target llama-embed-container.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/podman run --rm --replace --name litellm --network aether --publish 127.0.0.1:4000:4000 --memory 1536m --security-opt=no-new-privileges --env-file /home/dev/DevOps/aether/secrets/litellm.env -v /home/dev/DevOps/aether/config/litellm/config.yaml:/app/config.yaml:ro ghcr.io/berriai/litellm:main-latest --config /app/config.yaml --port 4000 --num_workers 1
+Restart=always
+RestartSec=3
+TimeoutStartSec=180
+Delegate=yes
+
+[Install]
+WantedBy=default.target
