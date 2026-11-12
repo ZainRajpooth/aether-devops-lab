@@ -167,3 +167,5 @@
 | 2026-11-12 | B | ex53b-triage-exclude-republish-gated-v1:FAIL | GATE=FAIL | EX53b re-scan still leaking |
 | 2026-11-12 | B | ex53c-normalized-blocklist-tiered-publish-gated-v1:FAIL | GATE=FAIL | EX53c re-scan leaking |
 | 2026-11-12 | B | ex53d-proven-allowlist-controls-gated-publish-v1:FAIL | GATE=FAIL | EX53d re-scan findings=9 |
+| 2026-11-12 | B | ex53e-union-blocklist-monotonic-gated-publish-v1:PASS | GATE=PASS | EX53e: union=9; staged 316->307; re-scan 0; github sha=93833d417d8f8188be25ab2aa0a1e81a9beec947 |
+| 2026-11-12 | B | ex54b-adminx-push-heatmap-entrypoint-docs-v1:PASS | GATE=PASS | EX54b: heatmap=1; entrypoint present; docs corrected |

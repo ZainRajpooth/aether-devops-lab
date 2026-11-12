@@ -1,0 +1,40 @@
+clone:
+  - name: git
+    image: woodpeckerci/plugin-git
+    environment:
+      PLUGIN_REMOTE:
+        from_secret: GITEA_CLONE_URL
+steps:
+  - name: curate-scan
+    image: docker.io/alpine:latest
+    commands:
+      - 'apk add --no-cache curl tar >/dev/null'
+      - 'mkdir -p .publish'
+      - 'for d in docs infra codemod; do [ -d "$d" ] && cp -a "$d" .publish/; done'
+      - 'for f in README.md .woodpecker.yml; do [ -f "$f" ] && cp -a "$f" .publish/; done'
+      - 'find .publish -type f \( -name "*.env" -o -name "*.pass" -o -name "*.token" -o -name "*.bak" -o -name "*.pre-*" \) -delete'
+      - 'while IFS= read -r rel; do [ -n "$rel" ] && rm -f ".publish/$rel"; done < infra/publish-blocklist.txt'
+      - 'curl -sSL -o /tmp/gl.tar.gz "https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz"'
+      - 'tar -tzf /tmp/gl.tar.gz >/dev/null 2>&1 || { echo "FATAL: gitleaks asset invalid"; exit 1; }'
+      - 'tar -tzf /tmp/gl.tar.gz >/dev/null 2>&1 || { echo "FATAL: gitleaks asset invalid"; exit 1; }'
+      - 'tar -xzf /tmp/gl.tar.gz -C /usr/local/bin gitleaks'
+      - 'gitleaks detect --config infra/publish-allowlist.toml --no-git --source .publish --redact'
+    when:
+      - event: push
+  - name: publish
+    image: docker.io/alpine/git
+    environment:
+      GITHUB_TOKEN:
+        from_secret: GITHUB_TOKEN
+    commands:
+      - 'git clone -q "https://ZainRajpooth:$GITHUB_TOKEN@github.com/ZainRajpooth/aether-devops-lab.git" /tmp/pub'
+      - 'find /tmp/pub -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +'
+      - 'cp -a .publish/. /tmp/pub/'
+      - 'cd /tmp/pub'
+      - 'git config user.name ZainRajpooth'
+      - 'git config user.email z4xebot1@gmail.com'
+      - 'git add -A'
+      - 'git diff --cached --quiet || git commit -q -m "publish: CI curated sync $CI_COMMIT_SHA"'
+      - 'git push -q origin HEAD:main'
+    when:
+      - event: push
