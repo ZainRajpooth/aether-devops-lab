@@ -30,6 +30,8 @@ steps:
       - 'git clone -q "https://ZainRajpooth:$GITHUB_TOKEN@github.com/ZainRajpooth/aether-devops-lab.git" /tmp/pub'
       - 'find /tmp/pub -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +'
       - 'cp -a .publish/. /tmp/pub/'
+      - 'mkdir -p /tmp/pub/badges'
+      - 'cp infra/ci-badge.json /tmp/pub/badges/ci.json'
       - 'cd /tmp/pub'
       - 'git config user.name ZainRajpooth'
       - 'git config user.email z4xebot1@gmail.com'
