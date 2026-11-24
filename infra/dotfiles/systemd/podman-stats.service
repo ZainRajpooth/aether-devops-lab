@@ -1,0 +1,6 @@
+[Unit]
+Description=Write podman stats to textfile
+
+[Service]
+Type=oneshot
+ExecStart=/home/dev/DevOps/aether/infra/scripts/podman-stats.sh

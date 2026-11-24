@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -uo pipefail
+ROOT="${AETHER_VENV_ROOT:-$HOME/.venvs}"
+mkdir -p "$ROOT"
+PY="$(pyenv which python3 2>/dev/null || command -v python3)"
+cmd="${1:-ls}"; shift 2>/dev/null || true
+case "$cmd" in
+  new)  n="${1:?usage: venv new <name> [python-path]}"
+        uv venv --python "${2:-$PY}" "$ROOT/$n" || exit 1
+        echo "created: $ROOT/$n"; echo "activate: va $n" ;;
+  ls)   ls -1 "$ROOT" 2>/dev/null ;;
+  path) printf '%s\n' "$ROOT/${1:?name required}" ;;
+  rm)   n="${1:?name required}"
+        if [ -d "$ROOT/$n" ]; then rm -rf "$ROOT/$n"; echo "removed: $n"; else echo "absent: $n"; fi ;;
+  *)    echo "usage: venv {new|ls|path|rm} [name] [python-path]"; exit 2 ;;
+esac

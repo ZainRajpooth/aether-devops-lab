@@ -1,0 +1,16 @@
+[Container]
+Exec=--collector.textfile.directory=/var/lib/node_exporter
+Image=docker.io/prom/node-exporter:latest
+ContainerName=node-exporter
+Network=aether
+PublishPort=127.0.0.1:9100:9100
+Mount=type=bind,source=/home/dev/DevOps/aether/infra/configs/node-exporter,destination=/var/lib/node_exporter,ro=false
+
+[Service]
+Restart=always
+TimeoutStartSec=30
+MemoryMax=128M
+CPUQuota=25%
+
+[Install]
+WantedBy=default.target

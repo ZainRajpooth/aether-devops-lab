@@ -169,3 +169,14 @@
 | 2026-11-12 | B | ex53d-proven-allowlist-controls-gated-publish-v1:FAIL | GATE=FAIL | EX53d re-scan findings=9 |
 | 2026-11-12 | B | ex53e-union-blocklist-monotonic-gated-publish-v1:PASS | GATE=PASS | EX53e: union=9; staged 316->307; re-scan 0; github sha=93833d417d8f8188be25ab2aa0a1e81a9beec947 |
 | 2026-11-12 | B | ex54b-adminx-push-heatmap-entrypoint-docs-v1:PASS | GATE=PASS | EX54b: heatmap=1; entrypoint present; docs corrected |
+| 2026-11-12 | B | ex58-query-param-activation-ci-publish-v1:FAIL | GATE=FAIL | EX58 pipeline= |
+| 2026-11-12 | B | ex59b-webhook-host-fix-v1:FAIL | GATE=FAIL | EX59b pipeline=error |
+| 2026-11-12 | B | ex59c-surgical-webhook-patch-ci-gate-v1:FAIL | GATE=FAIL | EX59c event=push status=running |
+| 2026-11-12 | B | ex60b-gitleaks-redirect-substring-heal-v1:FAIL | GATE=FAIL | EX60b event=push status=failure |
+| 2026-11-12 | B | ex60c-pin-gitleaks-version-ci-gate-v1:FAIL | GATE=FAIL | EX60c event=push status=failure |
+| 2026-11-12 | B | ex60e-exhaustive-blocklist-ci-gate-v1:FAIL | GATE=FAIL | EX60e event=push status=failure |
+| 2026-11-12 | B | ex62b-revert-postgres-to-19rc1-alpine-v1:PASS | GATE=PASS | EX62b: postgres=active version=psql (PostgreSQL) 19rc1 |
+| 2026-11-15 | B | ex63-portfolio-polish-v1:PASS | GATE=PASS | README 101L topology; ADR-0009; index 2 records; badge endpoint 200; CI push success |
+| 2026-11-15 | B | ex64a-disk-reclaim-v1:PASS | GATE=PASS | original run 5.9G->7.8G avail; cache 3.3G->1.4G; protected paths intact |
+| 2026-11-15 | B | ex64b-dev-ergonomics-v1:PASS | GATE=PASS | venv root+helper; bashrc block 1x; tmux; workspace; runbook; smoke venv 3.15.0 |
+| 2026-11-15 | B | ex65-observability-v1:PASS | GATE=PASS | prom 7d retention; node-exp textfile; podman-stats timer; grafana pg datasource; 17 live metrics |

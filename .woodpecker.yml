@@ -12,7 +12,7 @@ steps:
       - 'mkdir -p .publish'
       - 'for d in docs infra codemod; do [ -d "$d" ] && cp -a "$d" .publish/; done'
       - 'for f in README.md .woodpecker.yml; do [ -f "$f" ] && cp -a "$f" .publish/; done'
-      - 'find .publish -type f \( -name "*.env" -o -name "*.pass" -o -name "*.token" -o -name "*.bak" -o -name "*.pre-*" \) -delete'
+      - 'find .publish -type f \( -name "*.env" -o -name "*.pass" -o -name "*.token" -o -name "*.bak" -o -name "*.pre-*" -o -name "*.pem" -o -name "*.key" -o -name "*.db" -o -name "*.sqlite" \) -delete'
       - 'while IFS= read -r rel; do [ -n "$rel" ] && rm -f ".publish/$rel"; done < infra/publish-blocklist.txt'
       - 'curl -sSL -o /tmp/gl.tar.gz "https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz"'
       - 'tar -tzf /tmp/gl.tar.gz >/dev/null 2>&1 || { echo "FATAL: gitleaks asset invalid"; exit 1; }'

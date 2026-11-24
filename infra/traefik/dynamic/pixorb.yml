@@ -1,0 +1,19 @@
+http:
+  routers:
+    pixorb-api-router:
+      rule: "Host(`api.pixorb.localhost`) && !PathPrefix(`/metrics`)"
+      service: pixorb-api-svc
+      entryPoints: ["web"]
+    pixorb-web-router:
+      rule: "Host(`shop.pixorb.localhost`)"
+      service: pixorb-web-svc
+      entryPoints: ["web"]
+  services:
+    pixorb-api-svc:
+      loadBalancer:
+        servers:
+          - url: "http://pixorb-api:8000"
+    pixorb-web-svc:
+      loadBalancer:
+        servers:
+          - url: "http://pixorb-web:80"
