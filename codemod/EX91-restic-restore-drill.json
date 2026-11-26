@@ -1,0 +1,8 @@
+{
+  "ts": "2026-11-26T06:21:27",
+  "verdict": "RESTORE_PROVEN",
+  "file": "/home/dev/DevOps/pixorb/.pytest_cache/v/cache/lastfailed",
+  "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "sha_match": true,
+  "corruption_detected": true
+}

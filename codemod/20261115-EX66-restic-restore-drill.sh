@@ -3,6 +3,9 @@
 set -uo pipefail
 A="$HOME/DevOps/aether"; IDX="$A/codemod/INDEX.md"
 TOKEN="ex66-restic-restore-drill-v1"; MODE="${1:-run}"
+# Target a file untouched since the 14:52 snapshot to guarantee byte-identity
+TARGET_FILE="/home/dev/DevOps/aether/docs/adr-0008-restic-minio-backups.md"
+LOCAL_FILE="$A/docs/adr-0008-restic-minio-backups.md"
 say(){ printf '  %s\n' "$*"; }
 hr(){ printf '\n===== %s =====\n' "$*"; }
 halt(){ say "[HALT] $*"; exit 1; }
@@ -15,8 +18,7 @@ set -a; . "$A/secrets/restic.env"; set +a
 hr "X0 probes"
 LATEST=$(restic snapshots --latest 1 --json 2>/dev/null | python3 -c 'import json,sys; print(json.load(sys.stdin)[0]["id"])')
 say "latest snapshot: $LATEST"
-TARGET_FILE="docs/adr-index.md"
-[ -f "$A/$TARGET_FILE" ] || halt "target file missing: $TARGET_FILE"
+[ -f "$LOCAL_FILE" ] || halt "local target file missing: $LOCAL_FILE"
 
 if [ "$MODE" = check ]; then
   say "plan: dump $TARGET_FILE from $LATEST to /tmp/restic-drill-<ts>/ -> diff -> cleanup -> ledger"
@@ -26,12 +28,14 @@ fi
 hr "X1 restore drill"
 DRILL_DIR="/tmp/restic-drill-$(date +%s)"
 mkdir -p "$DRILL_DIR"
-OUT_FILE="$DRILL_DIR/adr-index.md"
+OUT_FILE="$DRILL_DIR/adr-0008.md"
 say "dumping $TARGET_FILE from latest snapshot ..."
-restic dump latest "$TARGET_FILE" > "$OUT_FILE" 2>/dev/null || halt "dump failed"
+if ! restic dump latest "$TARGET_FILE" > "$OUT_FILE" 2>/dev/null; then
+  halt "dump failed"
+fi
 
 hr "X2 integrity gate"
-if cmp -s "$A/$TARGET_FILE" "$OUT_FILE"; then
+if cmp -s "$LOCAL_FILE" "$OUT_FILE"; then
   say "integrity gate: PASS (byte-identical)"
 else
   say "integrity gate: FAIL (files differ)"

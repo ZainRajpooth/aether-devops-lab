@@ -180,3 +180,37 @@
 | 2026-11-15 | B | ex64a-disk-reclaim-v1:PASS | GATE=PASS | original run 5.9G->7.8G avail; cache 3.3G->1.4G; protected paths intact |
 | 2026-11-15 | B | ex64b-dev-ergonomics-v1:PASS | GATE=PASS | venv root+helper; bashrc block 1x; tmux; workspace; runbook; smoke venv 3.15.0 |
 | 2026-11-15 | B | ex65-observability-v1:PASS | GATE=PASS | prom 7d retention; node-exp textfile; podman-stats timer; grafana pg datasource; 17 live metrics |
+| 2026-11-15 | B | ex66-restic-restore-drill-v1:PASS | GATE=PASS | dumped /home/dev/DevOps/aether/docs/adr-0008-restic-minio-backups.md from ea193d30f14a750199feba299ae3f035919b205d97a1575396412a143337a721, byte-identical, net-zero cleanup |
+| 2026-11-15 | B | ex67-postgres-19rc2-upgrade-v1:PASS | GATE=PASS | upgraded to 19rc2-alpine, removed 19rc1-alpine, ~309MB reclaimed |
+| 2026-11-18 | B | ex69-python-3152-helper-v2:PASS | GATE=PASS | pyenv 3.15.2 side-by-side; version file; helper v2 resolver |
+| 2026-11-18 | B | ex-pixorb-02-infra-wire-v1:PASS | GATE=PASS | gitea repo, pg db/role (DB name resolved), restic include, venv |
+| 2026-11-18 | B | ex-pixorb-03-backend-skeleton-v1:PASS | GATE=PASS | fastapi+asyncpg skeleton; async alembic; secret-free ini; live-db pytest |
+| 2026-11-18 | B | ex-pixorb-04-schema-migration-v1:PASS | GATE=PASS | products/variants/inventory models; circular import healed; upgrade/downgrade round-trip PASS |
+| 2026-11-18 | B | ex-pixorb-05-catalog-api-v1:PASS | GATE=PASS | pydantic v2 schemas, fastapi routers, live-db CRUD tests PASS |
+| 2026-11-20 | B | ex68-stack-recovery-backup-heal-v1:PASS | GATE=PASS | nov-17 stack recovery recorded; restic includes via files-from; bare-path exec bug healed |
+| 2026-11-20 | B | ex-pixorb-05b-test-db-v1:PASS | GATE=PASS | pixorb_test DB; conftest migrate+truncate+per-test engine dispose; idempotent suite; utcnow healed |
+| 2026-11-20 | B | ex-pixorb-06-ci-wire-v1:PASS | GATE=PASS | gitea push verified; woodpecker pipeline green on push; CI postgres service |
+| 2026-11-20 | B | ex71-pipeline-reconcile-v1:PASS | GATE=PASS | single canonical pipeline (forge clone + when); EX70 retired; teardown race cosmetic |
+| 2026-11-20 | B | ex72-ci-poll-window-v1:PASS | GATE=PASS | CI poll status-aware 300s (was 120s break-on-pending); CI green |
+| 2026-11-20 | B | ex-pixorb-07-containerfile-quadlets-v1:PASS | GATE=PASS | Containerfile, quadlet templates (api+worker), Traefik labels; install gated |
+| 2026-11-20 | B | ex-pixorb-07b-runtime-image-v1:PASS | GATE=PASS | slim runtime image built; non-root+healthcheck; ARQ worker; container-safe env; live /health db=true |
+| 2026-11-22 | C | repair1-traefik-quadlet-rollback-v1:PASS | GATE=PASS | removed duplicate YAML block; traefik restored; bogus quadlets removed; swappiness single-source |
+| 2026-11-22 | C | ex-pixorb-09-data-safety-v1:PASS | GATE=PASS | untracked 3 committed .bak; pg_dump+verify+keep7; 6h idle timer; restic snapshot proven to include pixorb |
+| 2026-11-22 | B | ex-pixorb-10-red-metrics-v1:PASS | GATE=PASS | prometheus-client RED middleware; route-template labels; /metrics live; image+worker parity |
+| 2026-11-22 | C | ex-pixorb-10c-worker-redis-auth-v1:PASS | GATE=PASS | redis requirepass discovered+PING-proven; discrete REDIS_PASSWORD (600, gitignored); worker HealthCmd=none kills failed healthcheck units; zero restart/count delta 25s |
+| 2026-11-22 | C | ex-pixorb-11c-prometheus-remount-v1:PASS | GATE=PASS | single-file bind-mount inode pinning fixed by remount; status-aware scrape poll (60s) replaces fixed sleep; up{job=pixorb}==1; podman textfile metrics served |
+| 2026-11-24 | C | ex74-flutter-rewire-v1:PASS | GATE=PASS | SDK already at ~/DevOps/SDK/flutter (stable 3.47.7); rc PATH added; IDE pin healed; package_config regenerated offline; web/ scaffolding + 96%% disk flagged |
+| 2026-11-24 | B | ex-pixorb-08-flutter-web-v1:PASS | GATE=PASS | flutter web release built (fonts commented); nginx quadlet started; shop.pixorb.localhost + main.dart.js HTTP 200 via Traefik |
+| 2026-11-24 | B | ex-pixorb-08d-web-debug-port-v1:PASS | GATE=PASS | loopback-only 127.0.0.1:8101:80 on pixorb-web; edge + worker untouched; no 0.0.0.0 leak |
+| 2026-11-24 | B | ex76-oneshot-restart-neutralize-v1:PASS | GATE=PASS | zz-oneshot-no-restart.conf outranks manager override; analyzer accepts; podman-stats timer live; data-safety unregressed; failed-unit gate stack-scoped and bullet-agnostic |
+| 2026-11-24 | B | ex77-woodpecker-pipeline-v1:PASS | GATE=PASS | Woodpecker pipeline: lint (ruff), test (pytest+postgres), web-build (flutter 3.47.7), deploy (trigger aether rebuild) |
+| 2026-11-24 | C | repair-13-port-decollide-v1:PASS | GATE=PASS | gitea dropped redundant :3000 publish; per-service fuser pre-hooks; readiness-gated gitea+grafana; pipeline deps current; push restored |
+| 2026-11-24 | C | ex78-metrics-edge-block-v1:PASS | GATE=PASS | router rule !PathPrefix(/metrics) replaces failed ipWhiteList; edge 404; internal scrape up; 8100 debug intact (traffic-aware gate) |
+| 2026-11-25 | C | ex80-publish-secret-strip-v1:PASS | GATE=PASS | publish staging strips pem/key/db/sqlite; ledger vars de-keyworded; gitleaks RC=0 count=0; aether origin attached; CI success for HEAD |
+| 2026-11-25 | C | repair-15-aether-remote-v1:PASS | GATE=PASS | aether had no usable origin; pushes were silently swallowed by || say skipped; canonical remote derived from pixorb and verified by ls-remote |
+| 2026-11-25 | C | repair-16-gitea-credential-helper-v1:PASS | GATE=PASS | host-scoped git credential helper reads gitea-admin.user/.pass; GIT_TERMINAL_PROMPT=0 gates; both repos auth non-interactively; CI green |
+| 2026-11-25 | B | ex82-cached-dep-audit-v1:PASS | GATE=PASS | localhost/audit:latest built once; authoritative installed set audited offline; non-vacuous gate audited==installed; PEP503-normalized presence check |
+| 2026-11-25 | B | ex83-lock-and-ci-cve-gate-v1:PASS | GATE=PASS | requirements.lock from runtime metadata; CI audit step uses cached localhost/audit:latest with floor guard; lock-verify drift gate; Containerfile untouched |
+| 2026-11-25 | C | ex84-containerfile-lock-wiring-v1:PASS | GATE=PASS | candidate ex84check proven set-equal to lock+live via file-mounted probe; Containerfile installs from lock; latest untouched; promotion deferred |
+| 2026-11-25 | C | repair-21-quadlet-health-json-array-v1:PASS | GATE=PASS | HealthCmd converted to JSON array to bypass /bin/sh quoting collision; container now reports healthy; CI green |
+| 2026-11-26 | B | ex91-restic-restore-drill-v1:PASS | GATE=PASS | restic check + bounded single-file restore; SHA-256 equals live source; injected corruption detected; repo and prod untouched |

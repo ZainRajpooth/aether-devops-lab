@@ -126,8 +126,8 @@ say "[Z0] reason: Podman/Quadlet replaces k3d/k3s; Traefik/Caddy later replaces 
 # ===================== [Z1] planned corrected refs =====================
 declare -A REFS
 
-REFS[woodpecker-server]="docker.io/woodpeckerci/woodpecker-server:v3,docker.io/woodpeckerci/woodpecker-server:latest"
-REFS[woodpecker-agent]="docker.io/woodpeckerci/woodpecker-agent:v3,docker.io/woodpeckerci/woodpecker-agent:latest"
+REFS[woodpecker-server]="docker.io/woodpeckerci/woodpecker-server:v3,docker.io/woodpeckerci/woodpecker-server:v3"
+REFS[woodpecker-agent]="docker.io/woodpeckerci/woodpecker-agent:v3,docker.io/woodpeckerci/woodpecker-agent:v3"
 
 ORDER=(
   woodpecker-server
