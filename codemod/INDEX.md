@@ -215,3 +215,4 @@
 | 2026-11-25 | C | repair-21-quadlet-health-json-array-v1:PASS | GATE=PASS | HealthCmd converted to JSON array to bypass /bin/sh quoting collision; container now reports healthy; CI green |
 | 2026-11-26 | B | ex91-restic-restore-drill-v1:PASS | GATE=PASS | restic check + bounded single-file restore; SHA-256 equals live source; injected corruption detected; repo and prod untouched |
 | 2026-11-26 | B | ex92-restic-strong-witness-v1:PASS | GATE=PASS | restic restored a tracked source artifact (SHA match) AND a pg_dump artifact (gzip+trailer); both negative controls fired; cache-noise quantified for exclusion brick |
+| 2026-11-26 | B | ex93-backup-exclusions-v1:PASS | GATE=PASS | restic excludes .pytest_cache/.ruff_cache/.dart_tool/build; noise 99->0 (~96 MiB); tracked source and pg_dump artifacts preserved; repo check green |

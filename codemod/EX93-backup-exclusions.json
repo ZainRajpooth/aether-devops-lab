@@ -1,0 +1,17 @@
+{
+  "ts": "2026-11-26T06:30:42",
+  "verdict": "NOISE_EXCLUDED_VALUE_PRESERVED",
+  "before": {
+    "files": 1681,
+    "noise": 99,
+    "noise_mib": 96.4,
+    "tracked_source": 509
+  },
+  "after": {
+    "files": 1725,
+    "noise": 0,
+    "noise_mib": 0.0,
+    "tracked_source": 520,
+    "dumps": 4
+  }
+}

@@ -9,6 +9,6 @@ echo "[backup] start $(date -Is)"
 DUMP="$STG/pgdumpall-$(date +%Y%m%d-%H%M%S).sql"
 podman exec postgres pg_dumpall -U devops > "$DUMP" || { echo "[backup] FAIL pg_dumpall"; exit 1; }
 ls -1t "$STG"/pgdumpall-*.sql | tail -n +4 | xargs -r rm -f
-restic backup "$A" --exclude "$A/data/minio" --exclude '**/__pycache__' --exclude '**/.venv' --exclude '**/node_modules' --tag aether --tag scheduled || { echo "[backup] FAIL restic"; exit 1; }
+restic backup --files-from=/home/dev/DevOps/aether/infra/configs/restic-includes.txt --exclude "$A/data/minio" --exclude '**/__pycache__' --exclude '**/.venv' --exclude '**/node_modules' --exclude '**/.pytest_cache' --exclude '**/.ruff_cache' --exclude '**/.dart_tool' --exclude '**/build' --tag aether --tag scheduled || { echo "[backup] FAIL restic"; exit 1; }
 # retention handled weekly by aether-backup-prune.timer (EX52c): per-run backups are append-only
 echo "[backup] OK $(date -Is) snapshots=$(restic snapshots --json | python3 -c 'import json,sys;print(len(json.load(sys.stdin)))')"
