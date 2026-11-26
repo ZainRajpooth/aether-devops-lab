@@ -214,3 +214,4 @@
 | 2026-11-25 | C | ex84-containerfile-lock-wiring-v1:PASS | GATE=PASS | candidate ex84check proven set-equal to lock+live via file-mounted probe; Containerfile installs from lock; latest untouched; promotion deferred |
 | 2026-11-25 | C | repair-21-quadlet-health-json-array-v1:PASS | GATE=PASS | HealthCmd converted to JSON array to bypass /bin/sh quoting collision; container now reports healthy; CI green |
 | 2026-11-26 | B | ex91-restic-restore-drill-v1:PASS | GATE=PASS | restic check + bounded single-file restore; SHA-256 equals live source; injected corruption detected; repo and prod untouched |
+| 2026-11-26 | B | ex92-restic-strong-witness-v1:PASS | GATE=PASS | restic restored a tracked source artifact (SHA match) AND a pg_dump artifact (gzip+trailer); both negative controls fired; cache-noise quantified for exclusion brick |

@@ -1,0 +1,16 @@
+{
+  "ts": "2026-11-26T06:26:17",
+  "verdict": "STRONG_RESTORE_PROVEN",
+  "w1": {
+    "path": "/home/dev/DevOps/aether/Pend/20261029-B-instantiate-tree.sh",
+    "sha256": "3efccc187bafa75ff1e37d246270ab3e7aa559f242c7a52bf3ec2a1b5450bdbd",
+    "sha_match": true,
+    "corruption_detected": true
+  },
+  "w2": {
+    "path": "/home/dev/DevOps/pixorb/infra/db/dumps/pixorb-20261125-002017.sql.gz",
+    "gzip_ok": true,
+    "trailer_ok": true,
+    "truncation_detected": true
+  }
+}
