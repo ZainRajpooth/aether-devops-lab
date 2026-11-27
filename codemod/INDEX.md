@@ -218,3 +218,4 @@
 | 2026-11-26 | B | ex93-backup-exclusions-v1:PASS | GATE=PASS | restic excludes .pytest_cache/.ruff_cache/.dart_tool/build; noise 99->0 (~96 MiB); tracked source and pg_dump artifacts preserved; repo check green |
 | 2026-11-27 | B | ex98-awake-creator-v1:PASS | GATE=PASS | canonical aether-awake.service created+enabled (WantedBy=default.target, Before=gated set); linger verified; negative control proves gate blocks and creator restores; stack green |
 | 2026-11-27 | C | repair-30-socket-listener-v1:PASS | GATE=PASS | podman.socket failed with stale inode and no listener; cleared only after ss proved no listener; libpod API answering; agent stable 26s; aether CI green |
+| 2026-11-27 | C | repair-31-host-tune-reconcile-v1:PASS | GATE=PASS | Part 3 mutated canonical credential.helper + zramswap/swappiness without reading them; auth probed by exit code; duplicates removed; libsecret relocated to ~/.local/bin; CI green |
