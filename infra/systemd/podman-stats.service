@@ -1,0 +1,8 @@
+[Unit]
+Description=podman container metrics -> node-exporter textfile
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/dev/DevOps/aether/infra/scripts/podman-stats.sh
+Nice=10
+IOSchedulingClass=idle

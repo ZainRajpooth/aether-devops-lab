@@ -57,3 +57,4 @@ tls:
   certificates:
     - certFile: /etc/traefik/tls/leaf.pem
       keyFile: /etc/traefik/tls/leaf-key.pem
+

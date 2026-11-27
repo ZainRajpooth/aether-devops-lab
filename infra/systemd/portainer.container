@@ -1,0 +1,19 @@
+[Unit]
+Description=Portainer CE (loopback admin UI)
+After=local-fs.target network-online.target
+
+[Container]
+ContainerName=portainer
+Image=docker.io/portainer/portainer-ce:latest
+Network=aether
+PublishPort=127.0.0.1:9443:9443
+PublishPort=127.0.0.1:9000:9000
+Volume=portainer_data:/data
+
+[Service]
+Restart=always
+RestartSec=5
+TimeoutStartSec=90
+
+[Install]
+WantedBy=default.target

@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
+# aether venv helper v2 - uv-backed, pyenv-sourced, version-resolved.
 set -uo pipefail
 ROOT="${AETHER_VENV_ROOT:-$HOME/.venvs}"
-mkdir -p "$ROOT"
-PY="$(pyenv which python3 2>/dev/null || command -v python3)"
-cmd="${1:-ls}"; shift 2>/dev/null || true
+VERFILE="$HOME/.config/aether/python-version"
+resolve(){
+  if [ -n "${AETHER_PYTHON:-}" ]; then echo "$AETHER_PYTHON"; return; fi
+  if [ -f ./.python-version ]; then tr -d '[:space:]' < ./.python-version; return; fi
+  if [ -f "$VERFILE" ]; then tr -d '[:space:]' < "$VERFILE"; return; fi
+  echo "3.15.0"
+}
+pybin(){ echo "$HOME/.pyenv/versions/$1/bin/python"; }
+cmd="${1:-ls}"; shift || true
 case "$cmd" in
-  new)  n="${1:?usage: venv new <name> [python-path]}"
-        uv venv --python "${2:-$PY}" "$ROOT/$n" || exit 1
-        echo "created: $ROOT/$n"; echo "activate: va $n" ;;
-  ls)   ls -1 "$ROOT" 2>/dev/null ;;
-  path) printf '%s\n' "$ROOT/${1:?name required}" ;;
-  rm)   n="${1:?name required}"
-        if [ -d "$ROOT/$n" ]; then rm -rf "$ROOT/$n"; echo "removed: $n"; else echo "absent: $n"; fi ;;
-  *)    echo "usage: venv {new|ls|path|rm} [name] [python-path]"; exit 2 ;;
+  new)      v="$1"; ver="${2:-$(resolve)}"; [ -x "$(pybin "$ver")" ] || { echo "no pyenv python $ver"; exit 1; }
+            uv venv --python "$(pybin "$ver")" "$ROOT/$v" >/dev/null && echo "created $ROOT/$v (python $ver)";;
+  recreate) v="$1"; ver="${2:-$(resolve)}"; rm -rf "$ROOT/$v"
+            uv venv --python "$(pybin "$ver")" "$ROOT/$v" >/dev/null && echo "recreated $ROOT/$v (python $ver)";;
+  rm)       rm -rf "$ROOT/$1"; echo "removed $ROOT/$1";;
+  py)       resolve;;
+  ls|*)     for d in "$ROOT"/*/; do [ -d "$d" ] || continue
+              echo "$(basename "$d")  python=$(grep -m1 'version_info' "$d/pyvenv.cfg" 2>/dev/null | awk -F'= ' '{print $2}' || echo '?')"; done;;
 esac

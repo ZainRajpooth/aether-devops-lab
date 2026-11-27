@@ -1,0 +1,48 @@
+# HELP podman_container_cpu_percent Container CPU usage percent
+# TYPE podman_container_cpu_percent gauge
+podman_container_cpu_percent{name="litellm"} 1.80
+podman_container_cpu_percent{name="mailpit"} 0.01
+podman_container_cpu_percent{name="node-exporter"} 0.29
+podman_container_cpu_percent{name="minio"} 0.20
+podman_container_cpu_percent{name="pixorb-web"} 0.00
+podman_container_cpu_percent{name="pixorb-api"} 2.34
+podman_container_cpu_percent{name="postgres"} 2.18
+podman_container_cpu_percent{name="pixorb-worker"} 0.28
+podman_container_cpu_percent{name="weaviate"} 0.39
+podman_container_cpu_percent{name="n8n"} 1.68
+podman_container_cpu_percent{name="llama-embed"} 0.02
+podman_container_cpu_percent{name="redis"} 0.36
+podman_container_cpu_percent{name="prometheus"} 0.73
+podman_container_cpu_percent{name="gitea"} 0.62
+podman_container_cpu_percent{name="grafana"} 4.01
+podman_container_cpu_percent{name="zitadel"} 1.12
+podman_container_cpu_percent{name="woodpecker-server"} 0.56
+podman_container_cpu_percent{name="woodpecker-agent"} 0.06
+podman_container_cpu_percent{name="traefik"} 0.02
+podman_container_cpu_percent{name="portainer"} 0.14
+podman_container_cpu_percent{name="wp_01M8EE2MBD7AEWRY7HT07X58EM"} 20.80
+podman_container_cpu_percent{name="wp_01M8EE2MBD7AEWRY7HT5Y4989M"} 40.73
+# HELP podman_container_memory_bytes Container memory usage bytes
+# TYPE podman_container_memory_bytes gauge
+podman_container_memory_bytes{name="litellm"} 1
+podman_container_memory_bytes{name="mailpit"} 28
+podman_container_memory_bytes{name="node-exporter"} 25
+podman_container_memory_bytes{name="minio"} 290
+podman_container_memory_bytes{name="pixorb-web"} 11
+podman_container_memory_bytes{name="pixorb-api"} 102
+podman_container_memory_bytes{name="postgres"} 128
+podman_container_memory_bytes{name="pixorb-worker"} 42
+podman_container_memory_bytes{name="weaviate"} 128
+podman_container_memory_bytes{name="n8n"} 507
+podman_container_memory_bytes{name="llama-embed"} 179
+podman_container_memory_bytes{name="redis"} 31
+podman_container_memory_bytes{name="prometheus"} 124
+podman_container_memory_bytes{name="gitea"} 178
+podman_container_memory_bytes{name="grafana"} 493
+podman_container_memory_bytes{name="zitadel"} 183
+podman_container_memory_bytes{name="woodpecker-server"} 76
+podman_container_memory_bytes{name="woodpecker-agent"} 45
+podman_container_memory_bytes{name="traefik"} 116
+podman_container_memory_bytes{name="portainer"} 19
+podman_container_memory_bytes{name="wp_01M8EE2MBD7AEWRY7HT07X58EM"} 33
+podman_container_memory_bytes{name="wp_01M8EE2MBD7AEWRY7HT5Y4989M"} 79

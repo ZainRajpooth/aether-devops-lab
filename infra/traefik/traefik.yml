@@ -11,8 +11,8 @@ api:
   dashboard: true
 providers:
   file:
-    filename: "/etc/traefik/dynamic/dynamic.yml"
-    watch: false
+    directory: "/etc/traefik/dynamic"
+    watch: true
 log:
   level: INFO
 accessLog: {}
