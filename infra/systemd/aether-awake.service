@@ -1,0 +1,13 @@
+[Unit]
+Description=Aether awake sentinel - boot gate for the container stack
+Before=30c187696bc2a359bd4c39efc0fba8a16ecb97f0d7bd30304b5899b219c6f2e8-2c8f3095b8ad3702.service ade9bcaeb4b7ece52363c20f644baccb9cdb3046fbbde254e0bb3782121cabb4-7612c8c229c08084.service c2f46c5575035aeb3e966077551f9ace3a7ce4fefea7a439434f1b5d74e2cfbb-5e5b8c702fbc4d3e.service gitea.service grafana.service litellm.service llama-embed-container.service mailpit.service minio.service n8n.service node-exporter.service pixorb-api.service pixorb-web.service pixorb-worker.service podman-auto-update.service podman-auto-update.timer podman-restart.service podman.service podman.socket podman-stats.service portainer.service postgres.service prometheus.service redis.service traefik.service weaviate.service woodpecker-agent.service woodpecker-server.service zitadel.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/touch %t/aether-awake
+ExecStartPost=/usr/bin/chmod 0644 %t/aether-awake
+ExecStop=/usr/bin/rm -f %t/aether-awake
+
+[Install]
+WantedBy=default.target
